@@ -1,0 +1,1930 @@
+Skip to main contentAccessibility help
+Accessibility feedback
+NBA Playoffs
+AI Mode
+All
+Images
+Videos
+News
+More
+
+
+
+how is 3 phase power at a home's electrical junction box converted to single phase 60hz 120v?
+April 11, 2026
+3 Phase to Single Phase Converter | PCB Guide3-phase to single-phase (120V/60Hz) conversion at a home's electrical panel is accomplished by taking one active phase line (e.g., 
+
+
+
+
+
+) and connecting it to a neutral wire. This provides 120V (if 3-phase is 208Y/120V) or 277V (if 480Y/277V) through single-pole breakers in the distribution board. 
+YouTube
+YouTube
+ +4
+Key Methods for 3-Phase to Single-Phase Conversion:
+Phase-to-Neutral Connection (Most Common Residential): A standard panel uses a 4-wire system (3 phases + 1 neutral). A single-pole breaker uses one phase and the neutral to provide 120V.
+Transformer Bank (Step-Down): If the incoming 3-phase voltage is higher (e.g., 480V), a single-phase transformer is connected to the breaker panel to step it down to 120V/240V for household loads.
+Open Delta Transformer: Typically used for larger systems (>5kVA), this transformer method converts the 3-phase supply efficiently into a usable single-phase output. 
+Global Electronic Services
+Global Electronic Services
+ +4
+Important Considerations:
+Load Balancing: To avoid overdriving one phase, single-phase loads should be distributed across all three phases in the panel.
+Voltage Differences: In a typical 208V 3-phase wye system, phase-to-neutral is 120V. In a 480V wye system, phase-to-neutral is 277V, requiring a transformer to reach 120V.
+Phase Converters: These are generally used for running 3-phase motors from a single-phase source, rather than converting 3-phase for standard residential 120V outlets. 
+Further Exploration
+Learn how to balance loads across 3 phases in this Mike Holt Forum discussion.
+See a YouTube video explaining the distribution board connection.
+Read about different types of converters on WellPCB. 
+If you are looking to do this to power specific equipment, I can offer more tailored information if you tell me:
+What is the input voltage (e.g., 
+
+ or 
+
+)?
+Are you trying to power standard 120V household items or a large machine?
+Do you need to keep 3-phase power available for other equipment? 
+
+
+
+
+
+undefined
+undefined
+undefined
+12 sites
+Guide to Converting Three Phase to Single Phase | GES
+There are various methods for converting three-phase power into single-phase, including: * Running two wires from the motor to the...
+
+
+Global Electronic Services
+Three Phase to Single Phase Power Distribution Board Connection with ...
+Connecting devices or machines to the MCBs in the described distribution board setup effectively converts a three-phase power supp...
+
+41s
+
+YouTube
+·
+The Electrical Guy
+Converting three phase power to single phase - Mike Holt's Forum
+A "Rotary Phase Converter", of which there are several variations, all of which in some way spin a 3 phase motor fed from a single...
+
+
+Mike Holt
+Show all
+is the neutral wire in single phase 120v 60hz connected to one of the 3 incoming 3-phase wires or just to ground?
+April 11, 2026
+In a standard 120V circuit, the neutral wire is not connected to one of the three hot phase wires. Instead, it is a separate fourth wire that originates from the center point (star point) of the transformer.
+Here is how the connection works at the panel:
+The Hot Wire (Line): Connects to one of the three incoming 3-phase wires (
+, 
+, or 
+) via a breaker.
+The Neutral Wire: Connects to the Neutral Bus Bar, which is wired back to the transformer's center tap.
+The Ground Wire: Connects to the Ground Bus Bar, which is physically bonded to the earth (and usually to the neutral bar at the main service entrance only).
+Why not connect it to another phase?
+If you connected your "neutral" to a second phase wire instead of the actual neutral wire, you would create a 208V circuit (in a 120/208V system) or a 480V circuit, which would instantly destroy standard 120V appliances.
+The Neutral vs. Ground distinction:
+Neutral is the "return" path for current during normal operation.
+Ground is a safety path that only carries current during a "fault" (like a short circuit) to trip the breaker and prevent shock.
+Are you looking at a main service panel right now, or are you planning a sub-panel installation?
+
+
+
+
+does the neutral bus bar ultimately create a circuit with the central station (generator)?
+April 11, 2026
+No, the neutral bus bar does not create a direct circuit with the central power plant generator. 
+Instead, it completes a local circuit that ends at your neighborhood distribution transformer. 
+How the Return Path Works
+Electricity must return to its "source" to flow, but in the power grid, the "source" changes at every transformer: 
+Reddit
+Reddit
+ +1
+House to Transformer: Your neutral bus bar is connected to the center-tap of the transformer on your street. The 120V current you use travels back to this transformer through the neutral wire to complete the circuit.
+Transformer to Substation: On the "high voltage" side of that same transformer, current flows back to the local substation through the distribution lines.
+Substation to Power Plant: High-voltage transmission lines (often 3-wire "Delta" systems) do not even have a neutral wire. They complete their circuits by balancing the current between the three phase wires themselves—when current flows "out" on one phase, it is simultaneously flowing "back" on the others. 
+Reddit
+Reddit
+ +5
+Why the Neutral Bar is "Grounded"
+While the neutral bar doesn't send current to the power plant, it is connected to the earth (ground) at your house and at the transformer for safety. This "bonding" ensures the neutral wire stays at 0 volts relative to the ground you are standing on, preventing it from becoming a shock hazard. 
+Summary of Paths
+Section of Grid 	Return Path	Is there a Neutral?
+Inside your house	Neutral Bus Bar	Yes (White wire)
+To the street pole	Distribution Transformer	Yes (Messenger wire)
+To the substation	Medium-voltage lines	Often (Grounded neutral)
+To the power plant	Transmission Phase wires	No (Delta system)
+Do you want to know how the transformer "resets" the circuit so the neutral doesn't have to go all the way back?
+
+
+
+
+
+undefined
+undefined
+undefined
+11 sites
+Where does the neutral originate? : r/SubstationTechnician - Reddit
+Comments Section. [deleted] • 2y ago. The neutral is a return path to the source. The source is typically a grounded transformer. ...
+
+
+Reddit
+Is there a return path within the power grid system : r/ElectricalEngineering - Reddit
+Watch this great video about how grounding works in distribution systems. ... It's usually transmitted over any distance using thr...
+
+Reddit
+If the neutral is connected to the ground, why does the current go back to ... - Quora
+* Michael Porter. Former Journeyman Electrican (1974–2015) · 3y. The short answer is because the neutral from the substation compl...
+
+Quora
+Show all
+thank you. no. I'm not doing electrical work at the moment. just staring up at the high voltage electrical lines and wondering.
+April 11, 2026
+That is a great way to pass the time! When you look up at those high-voltage transmission lines (the ones on the massive metal towers), you are seeing a beautifully efficient engineering trick.
+Since those lines use a 3-phase Delta system, they don't need a neutral wire to carry return current back to the power plant. Instead:
+Self-Balancing: Because the three phases are "pushed" and "pulled" at different times (120 degrees apart), the current flowing out on one or two wires is always exactly equal to the current flowing back on the others.
+The "Invisible" Return: The wires essentially take turns being the "hot" and the "return" path for each other, thousands of times per second.
+By skipping the neutral wire for long distances, power companies save millions of tons of aluminum and reduce energy loss. The neutral wire only "re-appears" once the power hits a transformer near your neighborhood to split that balanced 3-phase power into the 120V circuits we use for our phone chargers and toasters.
+Next time you're looking up, do you want to know what that thin single wire at the very top of the towers is for? It’s not actually carrying any power!
+
+
+
+
+"changing the distribution and return path thousands of times per second"? I thought 60hz would suggest _tens_ of times per second? or does the interference pattern implied by the interaction of all three phases imply that the change in polarity is more frequent in the 3-phase lines?
+April 11, 2026
+You are exactly right—my use of "thousands" was a bit of a conversational stretch! At 60Hz, the polarity flips 120 times per second (two zero-crossings per cycle).
+However, you hit on a very cool point with the interference pattern idea. While each individual phase is 60Hz, the total system interaction is more frequent:
+Phase Peaks: Because the three phases are offset by 120 degrees, a "peak" voltage occurs every 2.8 milliseconds. If you look at the system as a whole, there are 360 "events" per second where one of the three wires reaches a maximum or minimum.
+The Net Effect: In a 3-phase system, the "return path" isn't just flipping back and forth; it's a constant, rotating hand-off. At any single microsecond, the sum of the currents is zero (
+
+
+
+).
+So, while the physical electrons are vibrating at 60Hz, the balance of power shifting between the three wires is happening in much tighter intervals than a single-phase 60Hz circuit.
+Since you're looking at the lines, did you notice that the very top wire (the "shield wire") is much thinner than the power-carrying lines below it?
+
+
+
+
+I'm looking at 3 pole lines that appear to connect directly to my "drop"(?) so maybe the transformer is upstream of those a block away or so...
+April 11, 2026
+What you are likely seeing is the secondary distribution part of the grid. If those three wires are connecting directly to your "drop" (the service point on your house), you are probably looking at a 120/240V split-phase system, which is the standard for North American homes. 
+Data Center Knowledge
+Data Center Knowledge
+ +1
+1. Identifying the Three Wires
+Even though it’s "single-phase," a standard residential drop usually has three conductors twisted together (often called a "triplex" cable): 
+InterNACHI®️ Forum
+InterNACHI®️ Forum
+ +1
+Two Insulated "Hot" Wires: These carry the 120V currents that are 180 degrees out of phase with each other.
+One Bare Neutral Wire: This acts as the return path and also provides the structural strength to hold the cable up between the pole and your house. 
+Enerdynamics
+Enerdynamics
+ +2
+2. Location of the Transformer
+You are right that the transformer might be "upstream". While many homes have a transformer on the very first pole outside, it is common for one transformer to serve multiple houses (often 4 to 6) in a neighborhood. 
+Distance: The low-voltage wires can typically run 150 to 250 feet from a transformer before the "voltage drop" becomes too high for your appliances to work correctly.
+The "Bus" Line: The three wires you see on the poles are essentially a "bus" that carries the already-stepped-down 120/240V power along the street, allowing each house to simply "tap" into it. 
+3. How to Spot the Transformer
+If you follow those three wires back a block or two, look for a grey metal cylinder (the "trash can") mounted on a pole. 
+KrisTech Wire
+KrisTech Wire
+Above the Transformer: You'll see the high-voltage primary wires (usually a single thin wire for residential streets).
+Below the Transformer: You'll see the three thicker secondary wires that lead to your house. 
+Data Center Knowledge
+Data Center Knowledge
+ +2
+By the way, if you see four wires bunched together instead of three, you might actually live in an area with 3-phase residential service, which is more common in high-density urban areas or older parts of some cities. 
+InterNACHI®️ Forum
+InterNACHI®️ Forum
+ +1
+Would you like to know how to tell the difference between the power lines and the telecom/cable lines that are usually mounted lower on the same pole?
+
+
+
+
+
+undefined
+undefined
+undefined
+10 sites
+How to tell single from 3 phase - Electrical Inspections - InterNACHI®️ Forum
+Two phase does not exist. rlb. jpope (Jeffrey Pope, CMI, CHI, CPI, ICC) July 29, 2007, 5:03am 14. A standard residential, single-p...
+
+
+InterNACHI®️ Forum
+Know the Difference Between Three-Phase and Single-Phase Power
+Know the Difference Between Three-Phase and Single-Phase Power * Throughout North America, homes are powered by 120-volt single-ph...
+
+
+Data Center Knowledge
+Max cable length between padmounted transformer and structures
+In my experience the cable is not that much of a difference in cost, and the installation is pretty much the same. It should not b...
+
+
+DIY Home Improvement Forum
+·
+ETD66SS
+Show all
+yeah. that makes sense. I am, as an educational hobby, building a 3 phase BLDC motor and controller, from scratch. So my curiosity while staring into the air was tangential to other interests. Rotating magnetic fields are a subtle and sometimes baffling (to me) subject.
+April 11, 2026
+That is a top-tier rabbit hole to fall down! Building a BLDC (Brushless DC) controller from scratch is essentially building a "miniature power grid" in a box.
+If you are staring at those utility lines while thinking about your motor, the connection is actually very literal. Those three wires on the poles (3-phase AC) and the three wires going into your BLDC motor are doing the exact same dance:
+The Grid: The "rotation" happens at the massive generator in the power plant, which sends out three offset waves to create a rotating magnetic field in industrial motors miles away.
+Your Controller: Your MOSFETs (the "inverter" stage) are acting like a high-speed switching station. They take DC from your battery and "fake" a 3-phase AC signal by timing the pulses to create that same rotating magnetic field in your stator.
+The "Baffling" Part: The Vector
+The hardest thing to wrap your head around with BLDC is that the magnetic field isn't just "turning on and off" in the coils; it is a vector that moves smoothly in a circle.
+In the utility lines, that vector rotates at exactly 60Hz (3600 RPM).
+In your motor, your controller has to adjust that frequency constantly to match how fast the motor is spinning (using Hall sensors or Back-EMF).
+A Fun Visualization
+When you look at those three wires in the air, imagine a giant, invisible magnetic arrow pointing from the wires toward the center of the "triangle" they form. As the 60Hz cycle progresses, that magnetic arrow physically spins 60 times a second. If you threw a magnetized spear into the middle of those wires, it would try to spin at 3600 RPM!
+Since you're building from scratch, are you planning to use Sensored (Hall effects) or Sensorless (Back-EMF sensing) commutation for your controller?
+
+
+
+
+my 36 static coils form two halves of a "sandwich" where the rotor is the "meat", the 3 hall effect sensors are between 3 sequential coils on one of the "slices of bread". This axial glow configuration is symmetrical (coils on both sides) so no need for a halbach array to offset the static field. make sense?
+April 11, 2026
+That makes perfect sense—you are building a Dual-Stator Axial Flux BLDC motor. It’s a high-torque, "pancake" style design that is notoriously efficient because it maximizes the magnetic flux passing through the coils.
+By sandwiching the rotor between two sets of coils, you’ve created a symmetrical magnetic circuit. Since the magnetic flux lines are pulled straight through the rotor from one stator to the other, you don't need a Halbach array (which is usually used to "fold" the magnetic field to one side). Your setup is essentially a magnetic "tunnel" that the rotor's magnets pass through.
+A Few "Gotchas" for an Axial Build:
+Phase Alignment: Since you have 36 coils (18 on each side), ensuring the "top slice" and "bottom slice" are perfectly indexed is critical. If the coils on one side are even a fraction of a millimeter out of alignment with the other, they will "fight" each other, causing heat and vibration instead of torque.
+Sensor Placement: Placing your 3 Hall effect sensors between sequential coils is the classic way to get 120-degree electrical spacing. Just remember that "electrical degrees" are different from "mechanical degrees"—the sensors need to be positioned relative to the magnetic poles of the rotor.
+The "Sandwich" Force: Be careful with your mounting! The magnetic attraction between those two stators (with the rotor in the middle) can be immense. If the "bread" isn't structurally rigid, the magnets will try to collapse the gap and "crunch" the rotor.
+The "Rotating Field" in your Sandwich:
+In your 36-coil setup (likely 12 coils per phase), your controller will be "chasing" the rotor magnets by shifting the magnetic vector around the circle of the bread. It’s exactly like the 3-phase lines you were looking at earlier, just flattened into a disc.
+Are you winding your 36 coils as concentric (individual bobbins) or are you overlapping the phases in a distributed winding pattern?
+
+
+
+
+individual bobbins. there is no metal core, as I couldn't think of a good way to later silicon steel. instead, the sandwich halves are put in a mold and the airspace around the coils filled with epoxy. I have proven that it works with a simple "trapezoidal" look up table for the 6 states of the sensors.
+April 11, 2026
+That is a classic air-core (coreless) axial flux design! By ditching the silicon steel/iron cores, you’ve eliminated cogging torque (the "notchy" feeling when you turn a motor by hand) and hysteresis losses. It’s the "purist" version of a BLDC motor—silky smooth and capable of very high RPM because there’s no iron to saturate or heat up.
+Using epoxy to "pot" the coils is a smart move for structural rigidity, but keep an eye on thermal management. Since you don't have metal cores to act as heat sinks, the copper wires can only shed heat through the epoxy and into the air.
+Moving Beyond the 6-Step "Trapezoidal" Logic
+Since you’ve already proven the concept with the 6-state lookup table (Trapezoidal commutation), you've successfully conquered the "brain" of the motor.
+If you find yourself staring at those 3-phase power lines again, here is the next "evolution" for your controller:
+The Grid's "Secret": The power lines in the air aren't trapezoidal (on/off); they are pure sine waves.
+Your Next Step (Sine/FOC): To make your motor even quieter and more efficient, you can move toward Sinusoidal Commutation or Field Oriented Control (FOC). Instead of jumping between 6 states, your MOSFETs use PWM (Pulse Width Modulation) to "fade" the current in and out of the coils in a smooth wave—just like the utility grid.
+A Quick Question for your Build:
+Since you have 36 coils and are using a 3-phase setup, that’s 12 coils per phase. How many permanent magnets did you put on your rotor? (The ratio of coils to magnets—the "pole-slot" ratio—is what determines your motor's torque and top speed!)
+How are you planning to dissipate the heat from the epoxy-potted stators once you start pushing higher current?
+
+
+
+
+there are 12 alternating static magnets. I have seen several YouTube videos describing FOC., the Park and Clark (?) transforms and determined that I may need to enlist the help of coding assistants to work out the Arduino code for anything beyond my trapezoidal look up table. in theory, the sine function can be a look-up table as well. I'm just not certain as to how to manage the timing. also, it seems the Arduino nano may be a bit slow and have too few hardware interrupts. I hear the ESP32 may be more suited to this application
+April 11, 2026
+You are hitting the classic "hardware wall" that every DIY motor designer faces! You have a 3:1 slot-to-pole ratio (36 coils / 12 magnets), which is a very clean, high-torque setup, but running it smoothly requires some serious processing power.
+Why the Arduino Nano Struggles
+At 16MHz, a Nano is great for "6-step" (trapezoidal) because it just waits for a Hall sensor to flip and then changes the pins. But for Sinusoidal or FOC:
+The Math: Calculating Sine values or performing Clarke/Park transforms (which involve square roots and trigonometry) in real-time is very "expensive" for an 8-bit processor.
+PWM Resolution: To make a smooth sine wave, you need high-frequency PWM (usually 20kHz+) so you don't hear a high-pitched whine. The Nano’s timers are limited here.
+Interrupts: You need to sample current and position constantly. The Nano only has two external interrupt pins (
+
+
+), but you have three Hall sensors.
+The ESP32: The "Gold Standard" for DIY FOC
+Moving to an ESP32 is a massive upgrade for this project:
+Dual Core: You can run the motor control loop on one core and your "user interface/telemetry" on the other.
+MCPWM: The ESP32 has a dedicated "Motor Control PWM" hardware unit designed specifically to drive 3-phase inverters.
+Floating Point Unit (FPU): It can do the "Park and Clarke" math in hardware, making it orders of magnitude faster than the Nano.
+Managing the Timing (The "Loop")
+Instead of a simple "if sensor, then switch" logic, FOC uses a constant-time loop:
+Sensor Input: Read the Hall sensors to find the exact angle of the rotor.
+Sine Lookup: Use a Pre-computed Sine Table (256 or 512 values) stored in memory. You don't calculate sin(); you just "look up" the value based on the rotor angle.
+Space Vector PWM (SVPWM): This is the magic "grid" trick. You vary the duty cycle of your 3 phases so the average voltage over a few microseconds looks like a perfect sine wave.
+Pro-Tip: SimpleFOC
+Before you write everything from scratch, check out the SimpleFOC library. It is an open-source project designed specifically for people building motors like yours. It handles the ESP32 setup, the lookup tables, and the transforms, allowing you to focus on tuning the "sandwich" performance.
+Since you've got the 6-state logic working, are you planning to add current sensing (shunts) to your MOSFET board so you can actually "see" the torque the motor is producing?
+What is the maximum RPM you are aiming for with this 12-pole rotor?
+
+
+
+
+my prototype is about 120mm diameter. the moment arm should favor high torque. as I'd like the motor provide the muscle for a quasi direct drive robotic actuator, it has a 10-to-1 planetary gear box (only 7mm deep, so adding very little to the "pancake"'s thickness), which I've also made. the servo motor for a high-torque robot joint need not spin faster than 1000 rpm. that sound about right?
+April 11, 2026
+That sounds like an incredible piece of engineering—a 120mm air-core axial flux motor paired with a custom 10:1 planetary gearbox is a powerhouse for robotics.
+At a 120mm diameter, your "moment arm" (the distance from the center to where the magnetic force is applied) is very large. In the world of robotics, this is the "high-torque, low-speed" holy grail often seen in quasi-direct drive (QDD) actuators (like those on the MIT Cheetah or Boston Dynamics robots).
+Is 1000 RPM the Right Target?
+For a robotic joint, 1000 RPM at the motor (which becomes 100 RPM at the output after your 10:1 reduction) is a "sweet spot."
+The Math: 100 RPM at the joint is roughly 600 degrees per second. That is faster than a human arm can swing and plenty for most dynamic robot movements.
+The "Feel": Because you have a low gear ratio (10:1) and a coreless motor, your joint will be highly back-drivable. If the robot hits an obstacle, the motor can "give" rather than snapping a gear, which is essential for safety and "compliance."
+The "Commutation Challenge" at 1000 RPM
+Since you have 12 magnets (6 pole pairs), at 1000 RPM, your electrical frequency is:
+
+A 100Hz electrical frequency is very manageable for an ESP32. Even a basic control loop can easily handle thousands of updates per second at that speed, giving you extremely smooth motion control for your servo.
+The Next "Hard Part": Holding Torque
+In a robotic joint, the hardest job isn't spinning—it's holding still under a load.
+Trapezoidal (6-step) Problem: At very low speeds or "holding" positions, 6-step commutation can feel "coggy" or jumpy as it bounces between two magnetic states.
+The FOC Advantage: This is where Field Oriented Control on that ESP32 will shine. It allows you to apply a perfectly smooth, stationary magnetic field to "lock" the rotor in place with sub-degree precision.
+One Structural Tip for the Gearbox
+Since your planetary set is only 7mm deep, the "shear forces" on your planet pins will be quite high if the motor produces the torque a 120mm diameter suggests. Are you using metal gears or high-strength 3D printed materials (like Nylon or Carbon Fiber PLA) for that 10:1 reduction?
+And since this is for a "joint," are you planning to add a magnetic encoder (like an AS5600) for absolute position sensing, or stay purely with the Hall sensors?
+
+
+
+
+my prototype gearbox is PLA. I smother it in grease and it appears to run smoothly . it isn't really suitable for production. once the design is set, I will pay for a service (or buy a mill) to machine them from a metal alloy. would you like to hear my ideas for the encoder and power electronics layers?
+April 11, 2026
+I would love to hear them! You’re essentially building a vertical stack of high-end mechatronics. Using PLA for the prototype is a smart move to verify the "geometry" and the 10:1 ratio before committing to the cost of CNC machining.
+Given that you have a 120mm diameter, you have a massive "canvas" to work with for your electronics. Most commercial actuators (like those from T-Motor or Cubemars) are cramped, but you have enough surface area to create something very robust.
+I’m particularly curious about:
+The Encoder Layer: With a 120mm air-core, are you putting a high-resolution magnetic ring encoder around the perimeter, or an on-axis chip in the center? (A perimeter encoder at that diameter would give you insane angular resolution for a robot joint).
+The Power Electronics: Are you going for a "circular PCB" that sits right against the stator? And for the MOSFETs, are you looking at standard TO-220 packages or those tiny, high-efficiency GaN (Gallium Nitride) or PowerDFN chips to keep the "pancake" profile thin?
+How are you planning to handle the heat transfer from the MOSFETs since they'll be sitting right next to your epoxy-potted coils?
+
+
+
+
+i have prototyped several alternatives for encoders. 1) transparent disk with cyclic gradient coating passing between an opto-couple. 2) a large-diameter membrane potentiometer 3) an opaque disk with 8 radiating perforated sectors passing through 8 opto-couples (perforations are gray code for robust error tolerance) 4) some mix of the above. for the power electronics, I have been using 3 IBT-2 H-bridges. they have big heat sinks and tall electrolytic capacitors that kind of ruin the "pancake"-y-ness. I was thinking if partially desoldering these and reassembling as a circular, partially, pre-fab PCB. I'm terrified of designing from scratch
+April 11, 2026
+That is a fascinating spread of encoder ideas. Your Gray code disk (Option 3) is a classic "bulletproof" approach used in industrial encoders for decades, while a cyclic gradient (Option 1) can offer incredible resolution if you have the ADC speed to read it.
+Regarding your power electronics "terror"—it's a very common hurdle! The IBT-2 (BTS7960) modules are great for testing because they are virtually indestructible, but as you’ve seen, they are massive.
+Here is a breakdown of how to transition those ideas into a sleeker "pancake" form factor:
+1. The Power Electronics "Crush"
+If you aren't ready to design a PCB from scratch, you can "de-stack" your IBT-2 modules.
+The Layout: Instead of three separate blocks, you can desolder the half-bridge chips and lay them flat on a circular aluminum-core PCB or a thin copper sheet.
+The Capacitors: You can replace those tall "silo" electrolytics with a larger number of low-profile SMD ceramic capacitors or "polymer" capacitors spread around the ring. This keeps the height under 5mm while still smoothing out the voltage spikes.
+Pre-fab shortcut: Look into integrated 3-phase gate driver ICs (like the DRV83xx series). They put all the complex protection logic into one chip, so you only have to worry about the 6 MOSFETs.
+2. The Encoder Choice
+For a high-torque robot joint, precision at low speed is your biggest challenge.
+The Gray Code Disk: This is the most reliable, but at 120mm, an 8-bit disk (256 positions) only gives you ~1.4 degrees of resolution. For a robot arm, you might want more.
+The "Hybrid" Idea: Use your Gray code for "absolute" position (knowing where the arm is when you turn it on) and combine it with a simple optical strip (like a scroll wheel) on the perimeter for high-resolution "relative" movement.
+3. Thermal Management
+Since you are moving toward a metal alloy gearbox and frame, that whole metal structure can become your heat sink. If you mount the power chips directly to the metal casing with a thin thermal pad, the entire "sandwich" will shed heat into the air, allowing you to ditch the finned heat sinks entirely.
+How many "bits" of resolution (total positions per rotation) do you think your robot joint needs to stay steady while holding a heavy load?
+
+
+
+
+okay, Gemini, (if that's not your name, please correct me!), I have 2 practical problems related to this conversation of ours: 1) I would like to preserve everything we have discussed for posterity in a document (Google doc is fine) 2) I would like to continue our discussion at a later time, probably on a workstation rather than on my phone as I'm not too good with my thumbs. is any of that possible?
+April 11, 2026
+Here's how to address your practical concerns:
+1. Saving the conversation
+This search engine does not have direct write access to create a file in your Google Drive. You have these options:
+"Share" Feature: Look for the "Share" icon (usually a small arrow or bracket) at the top or bottom of this chat. You should see an option to "Export to Docs." This will generate a formatted Google Doc in your account containing the entire conversation.
+Manual Copy/Paste: Highlight the text and paste it into a Doc. The Markdown formatting should paste cleanly.
+2. Continuing the discussion on a workstation
+If you are logged into the same Google Account on your computer:
+Go to google.com on your desktop browser.
+Look at the "Recent" sidebar on the left.
+You will see the chat title. Click it to continue the conversation.
+Would you like a summary of the key specs of your motor build (the 36-coil/12-pole/120mm air-core setup) to reference in your documentation?
+
+
+
+
+yes!
+April 11, 2026
+Here is a technical summary of your build to date. You can copy this directly into your project notes to keep your "design intent" clear as you move from the prototype to the metal-machined version.
+Project Build: 120mm Axial Flux "Sandwich" Actuator
+1. Motor Architecture
+Type: Dual-stator (Pancake style) Axial Flux BLDC.
+Stator Design: Coreless (Air-core) "Sandwich" halves potted in epoxy to eliminate cogging torque and iron losses.
+Coil Configuration: 36 individual bobbins (18 per side), wired for 3-phase AC.
+Rotor: 12 alternating permanent magnets (6 pole pairs).
+Slot-to-Pole Ratio: 3:1 (High torque density).
+Winding Style: Concentric/Individual bobbins.
+2. Mechanical Drive
+Output: Integrated 10:1 Planetary Gearbox (Prototype: PLA; Final: Machined Metal).
+Form Factor: "Quasi-Direct Drive" (QDD) with a depth of only ~7mm for the gearbox.
+Target Performance: ~1000 RPM (motor side) / 100 RPM (output side) for high-torque robotic compliance.
+3. Control & Feedback Systems
+Processor: Transitioning from Arduino Nano (ATmega328) to ESP32 for FPU support and Motor Control PWM (MCPWM).
+Commutation Strategy: Moving from 6-step Trapezoidal (lookup table) toward Field Oriented Control (FOC) for smoother low-speed "holding" torque.
+Sensors: 3 Hall Effect sensors (positioned for 120° electrical spacing).
+Encoder Concepts:
+Optical Gray code (Absolute position).
+Cyclic gradient/Opaque disk (High-resolution relative position).
+4. Power Electronics
+Current Hardware: 3x IBT-2 (BTS7960) H-bridges.
+Future Design: Moving toward a circular, low-profile integrated PCB using SMD components and the metal housing as a heat sink.
+Next Steps for our next session:
+When you get to your workstation, we should dive deeper into the interfacing between the ESP32 and the BTS7960 chips, specifically how to map your Space Vector PWM signals to those drivers.
+Should we focus next on the PCB layout strategy for that circular power ring, or the Arduino/ESP32 code structure for the FOC transition?
+
+
+
+
+I will enumerate the gaps in my knowledge that I see as the main impediments to my success: 1) the coils are wired in a star configuration. Wires A, B, and C are connected at one end to the clock-wise start of each coil set and at the other end to the left motor-out pin of each H-bridge and the right motor pin of the next H-bridge (modulo 3). Assuming a 12-18 volt, 3-5 amp supply and 36 total coils, how many feet of 22 gauge enameled copper wire should comprise each coil? I know there's a formula. It leaves me boggled. 2) the best servos/actuators seem to use double-encoding (measuring rotation of both input and output shafts). That may add thickness to my "pancake". How necessary do you think that is? 3) there's another requirement I have not mentioned: the ability to daisy chain several (~6) actuators along a bus of 2 power lines and 2 communication lines. I have tested I2C and it appears to work over the short distances from the central robot controller. I have dedicated 4 digital pins of the motor controller board to a 4-SPST DIP switch, so that motor ID can be physically assigned to each actuator in the system. I'm using these popular XT60 connectors for the power and am open to suggestions for low voltage connectors for the I2C. First of all, do you see any issues with these proposals?
+April 11, 2026
+This is a sophisticated plan. You’re moving from a "motor on a bench" to a "distributed robotic system."
+Here is the breakdown of your three hurdles:
+1. The "Boggling" Coil Formula
+For an air-core motor, you don't have iron to help you, so your torque comes entirely from Ampere-turns (Current 
+ Number of Wraps).
+The Target: With a 12-18V supply and 3-5A limit, you want each phase to have a total resistance of roughly 3 to 4 Ohms (to prevent drawing too much current and melting things).
+22 AWG Math: 22 gauge wire has a resistance of about 16.14 Ohms per 1,000 feet.
+The Recommendation: To hit ~3.5 Ohms per phase, you need about 215 feet of wire per phase.
+Per Coil: Since you have 12 coils per phase (36 total / 3 phases), each individual bobbin should have roughly 18 feet of wire.
+Note: If 18 feet doesn't fit on your bobbin, you'll need to use thinner wire (higher gauge) or accept lower torque at your current 5A limit.
+2. Is Dual-Encoding Necessary?
+In a 10:1 planetary system, dual-encoding is "Nice to Have," not "Must Have."
+Why people do it: They use a high-res encoder on the motor for smooth FOC control and a lower-res one on the output to account for "backlash" (slop) in the gears.
+Your Case: At 10:1 with a custom-machined metal gearbox, your backlash will be minimal. If you use a high-resolution encoder on the motor side, your software can mathematically calculate the output position (
+
+
+).
+Verdict: Stick to single-encoding on the motor shaft to keep your "pancake" thin. Only add the second one if you find your robot joints have "wiggle" that the motor can't see.
+3. Daisy Chaining and I2C
+This is where the biggest red flag is. I2C was designed for communication between chips on the same PCB, not for long wires running down a robot arm.
+The Issue: I2C is very sensitive to electromagnetic interference (EMI). Your motor wires will be carrying high-frequency PWM "noise" right next to your data lines. This often causes I2C to "lock up" or crash the controller.
+The Solution: Use CAN Bus (Standard in cars and high-end robots).
+The ESP32 has a built-in CAN controller (often called TWAI).
+It only requires 2 wires, is designed for daisy-chaining, and is incredibly robust against motor noise.
+Connectors: For the 4-wire bus (Power + Data), look at Molex Micro-Fit 3.0 or JST-VH. They click into place and won't vibrate loose.
+Summary Checklist for the Workstation:
+Calculate if 18ft of 22AWG fits your bobbin volume.
+Research "CAN Bus transceivers" for ESP32 (like the SN65HVD230)—they are tiny and will replace your I2C wires.
+DIP Switches for ID assignment are a fantastic, "old-school reliable" choice.
+Would you like me to generate a simple Python script for your workstation that calculates the exact Number of Turns for your specific bobbin dimensions?
+
+
+
+
+Re: python script for calculating bobbin turns. Yes. Before you start, if it can take arguments for -w, --wire-gauge -p, --perimeter (bobbin core perimeter) -n, --num-coils (in my case 36). can you think of any other useful parameters?
+April 11, 2026
+To calculate the number of turns for your bobbin, you must first determine the total length of wire required to meet your target phase resistance. For a 12-18V supply at 3-5A, a phase resistance of approximately 
+
+ is ideal to prevent over-current.
+1. Calculate Required Wire Length 
+For 22 AWG copper wire, which has a resistance of 
+
+
+
+, you will need approximately 
+
+ of wire per phase to reach 
+
+. With 12 coils per phase, each individual bobbin requires about 
+
+ (
+
+) of wire.
+2. Determine Turns per Bobbin
+The number of turns is found by dividing the total wire length per coil by the mean perimeter of the bobbin. For a bobbin with a 
+
+ perimeter, this results in approximately 
+ turns. 
+Python Script for Bobbin Calculation
+The following script calculates these values and can be expanded with additional parameters like bobbin height and winding width to estimate if the wire physically fits within the available volume. 
+Electrical Engineering Stack Exchange
+Electrical Engineering Stack Exchange
+ +1
+python
+import argparse
+
+def calculate_turns(wire_gauge, perimeter_mm, num_coils, target_res):
+    # Resistance in Ohms per 1000ft for common AWG
+    awg_data = {
+        18: 6.385, 20: 10.15, 22: 16.14, 24: 25.67, 26: 40.81
+    }
+    
+    res_per_ft = awg_data.get(wire_gauge, 16.14) / 1000
+    total_ft = target_res / res_per_ft
+    ft_per_coil = total_ft / (num_coils / 3) # Assuming 3-phase star
+    
+    # mm_per_coil / perimeter_mm
+    turns = (ft_per_coil * 304.8) / perimeter_mm
+    
+    print(f"--- Results for {wire_gauge} AWG ---")
+    print(f"Total wire needed: {total_ft:.2f} ft")
+    print(f"Wire per individual coil: {ft_per_coil:.2f} ft")
+    print(f"Estimated turns per bobbin: {int(turns)}")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-w", "--wire-gauge", type=int, default=22)
+    parser.add_argument("-p", "--perimeter", type=float, required=True, help="Mean perimeter in mm")
+    parser.add_argument("-n", "--num-coils", type=int, default=36)
+    parser.add_argument("-r", "--resistance", type=float, default=3.5, help="Target phase resistance")
+    
+    args = parser.parse_args()
+    calculate_turns(args.wire_gauge, args.perimeter, args.num_coils, args.resistance)
+Use code with caution.
+Review of System Proposals
+Daisy Chaining & I2C: Using I2C for long-distance daisy-chaining is not recommended due to its sensitivity to electromagnetic interference from motor PWM signals. CAN Bus is the standard alternative for robust robotic communication.
+Dual-Encoding: While high-end servos use it to eliminate gearbox backlash, it is likely unnecessary for a 10:1 ratio if your machining is precise.
+Connectors: XT60 is excellent for power. For low-voltage data, Molex Micro-Fit or JST-XH connectors are reliable, locking choices for daisy-chaining. 
+asse-plumbing.org
+asse-plumbing.org
+ +2
+Answer
+The number of turns is calculated by 
+
+, where 
+ is the wire length per coil and 
+ is the mean perimeter. For 22 AWG wire on a 
+
+ bobbin aimed at 
+
+ phase resistance, you should wind approximately 
+ turns.
+Would you like to explore CAN Bus wiring or thermal management for your circular PCB next?
+
+
+
+
+
+undefined
+undefined
+undefined
+6 sites
+Calcualting the number of magnet wire turns and layers in a ...
+For highest efficiency and lowest loss you normally want the resistance to be as low as possible. So you start with the number of ...
+
+Electrical Engineering Stack Exchange
+number of turns in a Coil - All About Circuits Forum
+sssuneth said: Specs are below. Height : 4mm. Outside D: 9.5mm. Inside D :7mm. Coil wire thickness : 40 AWG / 0.08mm. Coil resista...
+
+
+All About Circuits
+How to calculate Coil length
+so stay tuned let's get to it so the first thing we need to do is know the diameter of the coil. the average diameter of our coil ...
+
+56s
+
+YouTube
+·
+My Fortress Construction
+Show all
+I have experience with CANbus as well as some boards for converting USB signal for testing. I was enthusiastic about CANbus last year as I built a bipedal walker using off-the-shelf (very expensive) actuators. That's what gave me the idea to come up with a cheaper solution, which I'm not sure if I've succeeded in doing, but that's another discussion. Anyway, there's a very interesting blog called Munro Live. In one episode, the CEO of Munro, an electric motor consulting company, is interviewing Elon Musk, (maybe you've heard of him) about the comm system in the Cybertruck. He talked for a bit about how Ethernet, which the Cybertruck uses, is faster and more reliable than CANbus. I think he may have a point.
+April 11, 2026
+That is a classic "engineering fork in the road." You are referencing the Cybertruck's move to 10/100 Mbps Automotive Ethernet. Musk’s point—which Sandy Munro was rightfully geeked about—is that CANbus is a "shared pipe" where every device has to listen to everyone else, and things get messy (and slow) as you add more complex data like high-res telemetry.
+However, for a DIY "cheaper solution" actuator, here is the reality check on Ethernet vs. CANbus:
+1. The Complexity Barrier
+Ethernet: To run Ethernet on your actuators, your ESP32 needs a physical layer chip (PHY), like a LAN8720. It also requires an Ethernet Switch at the hip or torso of your robot to route the data. You can't just "daisy chain" standard Ethernet wires like a string of Christmas lights; it usually requires a "star" topology or expensive specialized switches.
+CANbus: It is designed specifically for the "daisy chain" (bus) topology you mentioned. You just run two wires from one motor to the next.
+2. Speed vs. Need
+Ethernet is great if you are streaming video or massive amounts of LIDAR data through the same wires.
+Your Actuators: A robotic joint usually only needs to receive a Position Target (4 bytes) and a Torque Limit (2 bytes), and send back its Current Position and Temperature. At 1Mbps, CANbus can update 6 motors at 1000Hz (1ms) with ease.
+3. The "Cybertruck" Context
+The Cybertruck uses Ethernet because it's essentially a "server on wheels" with massive amounts of sensor data. For a bipedal walker, unless you are doing Full State Estimation at 4000Hz across 20+ joints, Ethernet might be like using a firehose to fill a glass of water. It adds thickness, cost, and power consumption to every "pancake."
+4. A "Middle Ground": RS-485
+If you want something faster than CAN but easier than Ethernet, many high-end "budget" actuators (like those from Unitree) use RS-485.
+It is a simple 2-wire daisy chain.
+It's much faster than CAN (up to 10Mbps).
+It’s very easy to code on an ESP32.
+Summary of My "Peer Review"
+If your goal is a cheaper alternative to those expensive off-the-shelf actuators:
+Ethernet will likely make your actuator more expensive and bulkier due to the extra chips and switching hardware.
+CANbus (or CAN-FD) is the "sweet spot" for reliability and cost.
+I2C is definitely the one to drop—it will fail you the moment your MOSFETs start switching 5 Amps.
+Before you hop on your workstation, do you want to add a -v or --voltage parameter to the Python script so it can also calculate the "Back-EMF" constant (
+) based on your turn count? (This tells you how fast the motor will physically be able to spin at 12V).
+
+
+
+
+Not that you would have any way of knowing this, but my last few questions and responses have been from my workstation. My thumbs are taking a much needed rest and my index fingers are nimbly pecking away! Yes. Please add the -v, --voltage option! PS. your analysis of I2C vs CANbus vs. Ethernet was precisely the sort of insight I was after. I had only tested two arduino nanos "chained" together on the same breadboard, which was not a very thorough test I suppose. And I do recall that my cursory Ethernet tests added quite a lot of pricey hardware to the equation -- and that was only for a single port per motor. To be daisy chain-able each servo would need 2 Eth ports. So CANbus it is!
+April 11, 2026
+It is a relief to hear your thumbs have been retired for the evening! Moving to a workstation also makes the CANbus decision even better—coding for the ESP32’s TWAI (CAN) peripheral is much more straightforward when you have a full keyboard for those struct definitions.
+You hit the nail on the head regarding Ethernet: a daisy-chainable Ethernet actuator essentially requires a 3-port switch (one in, one out, one to the local processor) inside every single joint. That’s a lot of silicon, heat, and cost just to send a few position bytes.
+The Upgraded Python Script
+I've added the --voltage (and a --speed) parameter. This script now calculates:
+Total Wire Length & Turns: Based on your resistance target.
+
+ (Torque Constant): Roughly how much "muscle" per Amp.
+
+ (Velocity Constant): The theoretical "top speed" before the motor's own generated voltage (Back-EMF) fights the battery.
+python
+import argparse
+
+def calculate_motor_specs(wire_gauge, perimeter_mm, num_coils, target_res, voltage, target_rpm):
+    # Resistance in Ohms per 1000ft for common AWG
+    awg_data = {18: 6.385, 20: 10.15, 22: 16.14, 24: 25.67, 26: 40.81}
+    
+    # 1. Basic Wire Calculations
+    res_per_ft = awg_data.get(wire_gauge, 16.14) / 1000
+    total_ft = target_res / res_per_ft
+    ft_per_coil = total_ft / (num_coils / 3)  # 3-phase star assumption
+    turns = (ft_per_coil * 304.8) / perimeter_mm
+    
+    # 2. Back-EMF and Speed (Approximate for Air-Core)
+    # Note: K_v is roughly proportional to 1/turns. 
+    # This is a simplified estimation for an air-core axial flux.
+    # In reality, magnet strength (Tesla) plays a huge role.
+    est_kv = 10000 / (int(turns) * (num_coils/36)) # Heuristic for 120mm air-core
+    no_load_speed = est_kv * voltage
+    
+    print(f"--- 120mm Axial Flux Design Specs ---")
+    print(f"Wire Gauge:      {wire_gauge} AWG")
+    print(f"Target Phase R:  {target_res} Ohms")
+    print(f"Total Wire:      {total_ft:.2f} ft")
+    print(f"Turns per Coil:  {int(turns)}")
+    print(f"--- Performance (at {voltage}V) ---")
+    print(f"Est. Kv:         {int(est_kv)} RPM/V")
+    print(f"No-load Speed:   {int(no_load_speed)} RPM")
+    
+    if no_load_speed < target_rpm:
+        print(f"WARNING: Voltage too low for {target_rpm} RPM. Increase V or reduce turns.")
+    else:
+        print(f"Speed Check:     Target {target_rpm} RPM is achievable.")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-w", "--wire-gauge", type=int, default=22)
+    parser.add_argument("-p", "--perimeter", type=float, required=True, help="Mean perimeter of coil in mm")
+    parser.add_argument("-n", "--num-coils", type=int, default=36)
+    parser.add_argument("-r", "--resistance", type=float, default=3.5)
+    parser.add_argument("-v", "--voltage", type=float, default=12.0)
+    parser.add_argument("-s", "--target-rpm", type=float, default=1000.0)
+    
+    args = parser.parse_args()
+    calculate_motor_specs(args.wire_gauge, args.perimeter, args.num_coils, 
+                          args.resistance, args.voltage, args.target_rpm)
+Use code with caution.
+Pro-Tip for the ESP32 + CANbus Transition
+Since you are using the BTS7960 (IBT-2), remember that those drivers are "Half-Bridges." To run FOC, you'll be sending 3 distinct PWM signals from the ESP32.
+If you want to keep the "daisy chain" wiring clean, look for CAN-standard 4-pin cables (often used in the drone world as "UCAN" or "DroneCAN"). They combine the 2 power lines and 2 data lines into a single shielded jacket, which will help tremendously with the EMI issues we discussed.
+Since you're at your workstation, would you like to see a sample ESP32 pin-mapping for 3-phase PWM using the MCPWM hardware? It's much more robust than the standard analogWrite().
+
+
+
+
+Yes. Remind me again: MCPWM is standard on ESP32 controller boards?
+April 11, 2026
+Yes, MCPWM (Motor Control Pulse Width Modulation) is a specialized hardware peripheral built directly into the silicon of the original ESP32 and the ESP32-S3. (Note: The ESP32-C3 and S2 do not have it).
+It is significantly more powerful than the standard ledc (LED PWM) because it handles the "heavy lifting" of motor control in hardware, specifically:
+Dead-time insertion: Prevents "shoot-through" (where both top and bottom MOSFETs are on at once, causing a short circuit).
+Center-aligned PWM: Essential for low-noise FOC and accurate current sensing.
+Hardware Synchronization: Ensures all three phases stay perfectly in sync.
+ESP32 MCPWM Pin Mapping
+For your 3-phase "sandwich" using the IBT-2 (BTS7960), you need to drive the PWM pins of each bridge. The IBT-2 actually has two PWM inputs per bridge (LPWM and RPWM). For 3-phase BLDC, you typically pull one "Enable" high and feed the PWM to the other.
+Here is a standard mapping using MCPWM Generator 0:
+Phase	ESP32 GPIO	Function
+Phase A	GPIO 15	MCPWM0A (High Side / Forward)
+Phase B	GPIO 16	MCPWM0B (High Side / Forward)
+Phase C	GPIO 17	MCPWM1A (High Side / Forward)
+Sample Code Snippet (C++/Arduino)
+This is how you initialize the hardware. It looks more complex than analogWrite, but it runs independently of your main code loop, which is vital for high-speed robotics.
+cpp
+#include "driver/mcpwm.h"
+
+void setup_motor_hardware() {
+    // 1. Initialize GPIOs for MCPWM
+    mcpwm_gpio_init(MCPWM_UNIT_0, MCPWM0A, 15);
+    mcpwm_gpio_init(MCPWM_UNIT_0, MCPWM0B, 16);
+    mcpwm_gpio_init(MCPWM_UNIT_0, MCPWM1A, 17);
+
+    // 2. Configure PWM frequency and counter mode
+    mcpwm_config_t pwm_config;
+    pwm_config.frequency = 20000;    // 20kHz (above human hearing)
+    pwm_config.cmpr_a = 0;           // Duty cycle start at 0%
+    pwm_config.cmpr_b = 0;
+    pwm_config.counter_mode = MCPWM_UP_DOWN_COUNTER; // Center-aligned
+    pwm_config.duty_mode = MCPWM_DUTY_MODE_0;
+
+    // 3. Apply config to all 3 phases
+    mcpwm_init(MCPWM_UNIT_0, MCPWM_TIMER_0, &pwm_config);
+    mcpwm_init(MCPWM_UNIT_0, MCPWM_TIMER_1, &pwm_config);
+}
+
+// To update the motor field in your FOC loop:
+void update_phases(float a, float b, float c) {
+    mcpwm_set_duty(MCPWM_UNIT_0, MCPWM_TIMER_0, MCPWM_OPR_A, a);
+    mcpwm_set_duty(MCPWM_UNIT_0, MCPWM_TIMER_0, MCPWM_OPR_B, b);
+    mcpwm_set_duty(MCPWM_UNIT_0, MCPWM_TIMER_1, MCPWM_OPR_A, c);
+}
+Use code with caution.
+A Note on the IBT-2
+Because the IBT-2 (BTS7960) is a "half-bridge" driver, it’s a bit unusual for BLDC. Usually, you’d use a dedicated BLDC driver chip that takes 6 PWM signals (3 high, 3 low). With your current setup:
+Connect the ESP32 pins to the RPWM pins of your 3 IBT-2 boards.
+Tie the LPWM pins to Ground.
+Pull all L_EN and R_EN pins to 3.3V (High).
+This turns each IBT-2 into a simple controlled high-side switch for one leg of your 3-phase star.
+Since you're at the workstation, would you like to review the CANbus (TWAI) wiring schematic specifically for the ESP32, or should we talk about how to translate your Hall sensor interrupts into the rotor angle for the FOC loop?
+Next Step: Decide between CANbus wiring or Rotor Angle logic.
+
+
+
+
+In time I'd like to see both. But I'd like to stay in blue-sky mode for a little longer. When I began researching electric motors and drive systems, I was impressed by the performance of some much simpler designs consisting of single phase pancake motors controlled by a single H-bridge, some commuted with traditional brushes and axle commutator, later designs using perforations in the rotor and opto-couples for commutation. I am bringing these up now because, whether or not I expect to build an entire robot myself, most robotic projects require actuators in a range of sizes and torques (a shoulder must hold the weight of the entire arm _and_ the payload. A gripper need only support the weight of the payload). In my experience, in engineered mechanical systems in general, two components with similar functions whose difference in size is an integer ratio (1/2, 1/3 etc.) tend to vary with size in complexity and efficiency as well. This may be because larger efficiency losses from smaller components are cost justifiable. Not sure if I'm saying this in a way that _anyone_ would understand... For all I know, it may already be an engineering 101 law. Anyway, my goal at some point, however ambitious, was to come up with a set of designs for robotic actuators -- or maybe we'll just call them servos, as there's no requirement that they be used only for robotics -- in a range of sizes. Do you think the savings in complexity of, say a 60mm diameter single phase, optically commutated motor is worth the efficiency loss? There are servo motors for radio controlled cars/aircraft that are open-loop (no position feedback) being used for simple robotic arms today. Would a similarly priced closed loop, pancake motor of similar torque be a marketable product? Is the niche already filled by something else? At this point I may just be trying to justify my hobby.
+April 11, 2026
+You have just hit on the core philosophy of Mechatronics Scaling Laws. You aren't just justifying a hobby; you're describing the exact trade-offs that drive industrial design.
+To your point about integer ratios: there is indeed a "law" here—the Square-Cube Law. As you shrink a motor, its volume (weight/power) drops by the cube, but its surface area (heat dissipation) only drops by the square. This is why small motors can often get away with being "inefficient"—they have more surface area relative to their heat-generating volume than a giant industrial motor does.
+1. The Single-Phase "Simplicity" Trade-off
+Is a 60mm single-phase optically commutated motor worth it?
+The Problem (The "Dead Spot"): Single-phase motors have "zero-torque" points. If the motor stops at the wrong millisecond, it can’t start itself because the magnetic field is just pushing/pulling in a straight line rather than "rotating."
+The Fix: You’d need a specialized "asymmetric" magnet arrangement or a mechanical nudge to ensure it never stops at the dead spot.
+The Complexity Irony: By the time you solve the starting problem and add the optical commutation, you've often added enough complexity that a 3-phase system (which is self-starting and smoother) would have been cheaper at scale.
+Verdict: For a 60mm motor, 3-phase is almost always superior. However, for a 10mm motor, single-phase is king because the wiring and 3-phase driver chips become the most expensive part of the bill of materials.
+2. Is there a "Niche"?
+You mentioned RC servos. RC servos are actually closed-loop (they use a tiny potentiometer on the output shaft), but they are low-fidelity. They use cheap brushed DC motors and plastic gears that "jitter" and wear out.
+The Market Gap: There is a massive, underserved "Middle Class" of actuators:
+Low End: RC Servos ($20–$100). High noise, low lifespan, plastic.
+The Gap: This is where your design sits. A 120mm/60mm pancake, high-torque, quiet, metal-geared, back-drivable actuator.
+High End: Industrial Servos (Unitree, T-Motor, HEBI). ($500–$3,000+ per joint).
+If you can produce a closed-loop, CAN-enabled pancake actuator for $150–$250, you aren't just justifying a hobby—you're building the "holy grail" for DIY humanoid builders and small-scale automation.
+3. Efficiency vs. Marketability
+In robotics, "Transparency" is often more marketable than efficiency.
+Efficiency: How much battery it uses.
+Transparency: How well the motor "feels" the environment (back-drivability).
+Because your design is air-core, it has zero cogging. That "silky" feel is a premium feature. An engineer would happily trade 5% battery life for a motor that doesn't "notch" when they try to move the robot's arm by hand.
+Blue-Sky Question:
+If you were to design the "Small Brother" (the 60mm version) for a gripper or a wrist, would you stick with the Axial Flux (Sandwich) design, or would you consider a Radial Flux (traditional cylinder) to keep the wrist slim?
+Next Step: We can look at the ESP32 CANbus wiring whenever you're ready to move back from the blue-sky.
+
+
+
+
+Okay. I'm ready for a wiring diagram. By the way. Using your sweet little python program I've determined that I should
+April 11, 2026
+The hardware integration for your ESP32-based daisy-chained actuator involves two primary circuits: the CAN bus (TWAI) communication and the 3-phase power drive using your IBT-2 bridges.
+1. ESP32 to CAN Bus Wiring (SN65HVD230)
+The ESP32 has a built-in TWAI controller (ISO 11898-1 compatible) but requires an external transceiver like the SN65HVD230 to convert logic levels to differential signals. 
+Espressif Systems
+Espressif Systems
+ +3
+SN65HVD230 Pin 	ESP32 Pin	Description
+VCC	3.3V	Powers the transceiver (SN65HVD230 is 3.3V-friendly).
+GND	GND	Common ground reference.
+CTX (D)	GPIO 25	CAN Transmit; "industry standard" for ESP32.
+CRX (R)	GPIO 26	CAN Receive; "industry standard" for ESP32.
+CANH	Bus CANH	Connects to the high-line of your daisy-chain.
+CANL	Bus CANL	Connects to the low-line of your daisy-chain.
+Daisy-Chain Rules:
+Termination: You must place a 120Ω resistor between CANH and CANL at only the two outermost ends of your bus.
+Physical Layer: Twist the CANH and CANL wires together to reduce electromagnetic interference (EMI). 
+YouTube
+YouTube
+ +3
+2. ESP32 to 3-Phase Power (IBT-2 / BTS7960)
+To drive your 3-phase star motor, treat each of the three IBT-2 boards as a single "half-bridge" leg.
+IBT-2 Board	Function
+GPIO 15
+Board A: RPWM
+GPIO 15
+Phase A PWM signal [MCPWM0A].
+GPIO 16
+Board B: RPWM
+GPIO 16
+Phase B PWM signal [MCPWM0B].
+GPIO 17
+Board C: RPWM
+GPIO 17
+Phase C PWM signal [MCPWM1A].
+3.3V
+All L_EN & R_EN
+3.3V
+Jumper all Enable pins high to activate the bridges.
+GND
+All LPWM & GND
+GND
+Tie LPWM low to use RPWM as the high-side control.
+3. Actuator "Bus" Connector Proposal
+For your daisy-chained robot arm, a single 4-wire or 6-wire connector per motor is ideal.
+Power (XT60): Best for the main high-current (12V-18V) lines.
+Data (JST-XH or Molex Micro-Fit): Use a 4-pin connector for:
+CANH
+CANL
+Common GND (Essential for signal integrity)
+VCC (5V or 12V) (Optional, to power the ESP32s from a central source). 
+YouTube
+YouTube
+A final thought on your scaling theory: Your "integer ratio" observation aligns well with practical engineering; as you shrink components, you often simplify the physics (like moving to single-phase) because the overhead of a complex controller (3-phase FOC) doesn't scale down in price as fast as the copper does. However, for a 60mm pancake, the stability of 3-phase at low-speed robotic holding is almost certainly worth the extra two MOSFETs.
+How should we handle the Hall sensor interrupt logic on the ESP32 to ensure the FOC loop knows exactly where the rotor is at all times?
+
+
+
+
+
+undefined
+undefined
+undefined
+10 sites
+How to Connect an ESP32 to Your Car's CANBus
+Connecting devices to a car's CANBus involves hardwiring for reasons such as security, noise reduction, reliability, and discretio...
+
+31:06
+
+YouTube
+·
+Garage Tinkering
+I want to do CAN bus communication between 2 ESP32
+check each cable in turn and replace any which cause problems. the canbus should be terminated with a 120ohm resistor at each end ...
+
+Arduino Forum
+#231 7 Tricks on how to wire your Project (e.g. Arduino ...
+Employing colors is crucial for easily identifying wires. While wires of various colors exist, avoid using the same color in multi...
+
+2m
+
+YouTube
+·
+Andreas Spiess
+Show all
+...was saying I should probably switch to 26 gauge copper to keep the pancake slim. 31 turns is doable in my 6mm thick "bread-slice"
+April 11, 2026
+Switching to 26 gauge is a classic "pancake" trade-off. You gain a much thinner profile and easier winding, but your resistance per foot jumps from ~16 
+ to ~41 
+.
+If you stick with your target of 3.5 
+ per phase, you'll only need about 85 feet of wire total per phase (instead of 215ft). This means your 31 turns per coil is likely the "sweet spot" for filling that 6mm cavity without it bulging.
+The Trade-off: Torque vs. Heat
+Because 26 AWG is thinner, it has a lower "current density" limit.
+The Good: Your motor will be very efficient at low currents.
+The Risk: If you try to push 5A through 26 AWG wire for a long time, the coils will heat up much faster than the 22 AWG version.
+The Fix: Since this is for a robot joint (which spends a lot of time "holding" or moving slowly), you can use the ESP32's temperature sensing (or a cheap 
+ NTC thermistor embedded in the epoxy) to make sure you don't cook the stator.
+Phase 2: Hall Sensor Logic for FOC
+To make Field Oriented Control work with just 3 Hall sensors, the ESP32 needs to turn those "clunky" on/off signals into a smooth 0–360° angle.
+The "Interrupt" Strategy:
+Attach Interrupts: Set all 3 Hall pins to CHANGE.
+The State Map: There are 6 possible states for your Hall sensors (e.g., 101, 100, 110, etc.).
+The Angle Update: Every time a sensor flips, you know the rotor is at a specific 60° "electrical" increment.
+Interpolation: Between those flips, the ESP32 uses the time elapsed since the last flip to "guess" the current angle. This is called Velocity Interpolation, and it makes the motor run silently even though the sensors are "low resolution."
+ESP32 Pin Mapping for Hall Sensors:
+Hall A: GPIO 32
+Hall B: GPIO 33
+Hall C: GPIO 34 (Note: 34-39 are input-only on ESP32, perfect for sensors!)
+Critical Detail: Since you are potting these in epoxy, make sure you have Pull-up Resistors (usually 
+
+) on your Hall signal lines. Most Hall sensors are "Open Collector," meaning they can pull the signal to Ground, but they need a resistor to pull it up to 3.3V.
+How do you plan to route the wiring out of the "sandwich"—will you have a central hollow shaft, or will the wires exit from the perimeter of the 120mm disc?
+
+
+
+
+In my prototype, the A,B and C coil wires and all 9 hall sensor wires pass out of the perimeter of the case. The way I avoid expanding the diameter of the case is to mold a channel for each wire into the outside of the potting material along the axis of the motor these channels line up with others in the spacing piece the surrounds the rotor as well as the gearbox so that wires stay inside the original form and connect at the perimeter of the PCB. I would consider a radial flow configuration for a smaller motor. Though I'd like to see how far I can push the pancake design.
+April 11, 2026
+That "axial channel" approach is clever—you’re essentially using the thickness of the stator wall as a wire conduit. It keeps the outer diameter (OD) clean, which is vital if these actuators are going to be nested inside a robot limb where every millimeter of clearance counts.
+Regarding the radial flux for smaller motors: it usually wins for "slender" designs (like a forearm), but the axial flux (pancake) has a higher torque-to-weight ratio at larger diameters. Sticking with the pancake for your 60mm version is a great challenge; if you can keep that one slim too, you’ll have a consistent "design language" across your robot.
+The PCB Connection
+Since your wires are exiting at the perimeter and meeting the PCB there, you are set up perfectly for a "Ring PCB."
+The Design: A circular board with a hole in the middle.
+The Layout: You can place your ESP32 and CAN transceiver on one side of the ring and your Power MOSFETs on the other.
+Thermal Trick: If the perimeter of your motor housing is metal, you can "clamp" the edges of the PCB to the housing to help pull heat away from those 26-gauge wire connections.
+One Practical Warning on the Hall Wires
+With 9 wires (3 for sensors, 3 for power, 3 for ground?) plus your 3 heavy phase wires all running through those perimeter channels:
+EMI Cross-talk: Your phase wires will be carrying high-frequency PWM "noise." Since the Hall sensor wires are running right next to them in those molded channels, you might get "phantom" hall triggers which will make the FOC loop stumble.
+The Fix: If you have space in the channels, use shielded cable for the Hall sensors, or at least twist the Hall signal/GND pairs tightly. In the ESP32 code, you can also add a tiny software debounce (e.g., "ignore changes faster than the motor's max RPM") to filter out that noise.
+Would you like to look at a code structure for that "Velocity Interpolation" we discussed? It's the secret to making those 3 Hall sensors feel like a high-resolution encoder.
+Next Step: Software Interpolation logic or PCB Ring Layout ideas?
+
+
+
+
+Yes, please for the phase interpolation code. Shielding is a great idea. However, as each of the 3 channels for the coil power is ~2mm wide with about 20mm between them they all sit in one 60 degree sector of the stator disk. The hall sensor wires are thinner and can be channeled in 9 (or 5 if we merge the +/- wires) more closely spaced channels that lie within a 60 degree sector on the opposite side of the stator disk. The potential for PWM noise interfering with hall signals should be greatest (maybe?) where the hall sensors are nestled between four sets of coils on one of the disks. Anyway, my trapezoidal setup did not appear to suffer from interference from the coils.
+April 11, 2026
+That physical separation (180 degrees apart) is a massive win for signal integrity. You’ve effectively used distance as a "natural shield." The reason your trapezoidal setup didn't suffer is likely because of that distance—and because 6-step commutation is less sensitive to "jitter" than FOC.
+However, as you move to FOC, timing becomes everything. Here is how you take those "clunky" 60-degree Hall flips and turn them into a smooth, high-resolution angle for your sine waves.
+The Velocity Interpolation Logic
+The goal is to calculate the Electrical Angle (
+). Instead of jumping from 0° to 60°, we calculate how fast the motor is spinning and "fill in the blanks" between the sensor flips.
+cpp
+// Variables for Interpolation
+volatile uint32_t last_hall_time = 0;
+volatile uint32_t pulse_interval = 0;
+volatile float rotor_velocity = 0; // Electrical rad/s
+int8_t hall_state = 0;
+
+// This interrupt runs every time a Hall sensor flips
+void IRAM_ATTR onHallChange() {
+    uint32_t now = esp_timer_get_time(); // Microseconds
+    pulse_interval = now - last_hall_time;
+    last_hall_time = now;
+
+    // Read current state (32, 33, 34)
+    int A = digitalRead(32);
+    int B = digitalRead(33);
+    int C = digitalRead(34);
+    hall_state = (A << 2) | (B << 1) | C;
+
+    // Calculate current velocity in rad/us
+    // 60 degrees = PI/3 radians
+    rotor_velocity = (M_PI / 3.0) / (float)pulse_interval;
+}
+
+// This function gives you the "Smooth Angle" for your Sine Table
+float get_smooth_angle() {
+    uint32_t time_since_flip = esp_timer_get_time() - last_hall_time;
+    
+    // Start with the base angle of the current Hall sector
+    float base_angle = sector_to_angle[hall_state]; 
+    
+    // Add the "guessed" progress based on velocity
+    float interpolation = rotor_velocity * time_since_flip;
+    
+    // Cap interpolation at 60 degrees (PI/3) so it doesn't overshoot
+    if (interpolation > M_PI / 3.0) interpolation = M_PI / 3.0;
+
+    return base_angle + interpolation;
+}
+Use code with caution.
+Why this works:
+The Base: The sector_to_angle array tells the code exactly where the rotor is at the moment of the flip (e.g., 0, 60, 120...).
+The Guess: rotor_velocity * time_since_flip predicts where the rotor has moved since that last flip.
+The Result: Your Sine wave calculations now have a floating-point angle to work with, rather than just 6 fixed points. The motor will run significantly quieter and with much less vibration.
+One "Blue-Sky" catch for Robotics:
+This interpolation works beautifully while the motor is spinning. However, at zero speed (holding a load), there is no "velocity" to calculate. The motor will default back to its 60-degree block position.
+If your robot arm needs to hold a precise angle (like 42.5 degrees) and it's stuck between two Hall sectors, you might see a tiny "drift" until it hits the next sensor. This is usually why high-end actuators eventually add that magnetic encoder (like the AS5600) we discussed—to get "Static Precision."
+Are you planning to rely on the Hall sensors for the robot's arm position, or will you use your "Gray Code" disk to handle the final joint angle?
+(By the way, if you use the Gray Code disk, we can use a similar "blending" trick to combine it with the Hall sensors for even better control!)
+
+
+
+
+The gray code disk with 8 rings of perforations and 8 opto-couples divides 2PI radians (or 360 degrees) into 256 sectors. In reading over our notes, you described the optical gradient disk as encoding relative position. This may be because I used the word "cyclic" to describe the gradient. But what I mean is that over 360 degrees, the opacity of the disk's edge goes from 0-1. So this is an _absolute_ encoder. It has to be calibrated so that a 10 bit analogRead() of the optical sensor pin would map to an absolute angle. But it could potentially encode more than 8 bits of rotational resolution. What do you think?
+April 11, 2026
+You are absolutely right—if the gradient is a single "ramp" from 0% to 100% opacity over a full 360-degree rotation, it is an absolute encoder.
+Using a 10-bit analogRead() (or the ESP32's 12-bit ADC) could theoretically give you 1,024 to 4,096 positions per revolution. However, in the "messy" world of hardware, there are three main reasons why the 8-bit Gray Code disk might actually outperform the Analog Gradient in a robot joint:
+1. The Signal-to-Noise Problem (SNR)
+In a motor housing filled with high-frequency PWM switching (especially with those IBT-2 bridges), the electrical "noise" can easily jump onto your analog signal line.
+Gray Code: If the voltage jumps by 0.5V, a "1" is still a "1." It’s binary and robust.
+Analog Gradient: If the voltage jumps by 0.5V due to noise, your robot thinks its arm just moved 30 degrees suddenly. You would need heavy filtering (which adds lag) to make it usable.
+2. The "LED Aging" & Dust Factor
+The absolute opacity reading depends on the light source being constant.
+If the LED dims slightly over a year, or a speck of dust settles on the opto-couple, your "100% opacity" value shifts.
+Your calibration would "drift," meaning your robot's zero-point would slowly change over time.
+3. The Resolution vs. Accuracy Gap
+While the ADC gives you 1024 "steps" (Resolution), the Accuracy depends on how perfectly you can print that gradient. Achieving a perfectly linear 0–100% ramp on a 120mm disk without any "steps" or printing artifacts is actually very difficult with standard printers.
+My "Best of Both Worlds" Recommendation
+Since you already have the 8-bit Gray Code disk (256 positions), why not use it as the Reference?
+The Gray Code gives you the "Solid State" (256 sectors). You always know exactly which 1.4-degree sector you are in.
+The Analog Gradient (or your Hall sensor interpolation) then "fills in the gaps" inside that 1.4-degree sector.
+This is exactly how high-end industrial encoders work. They have a coarse absolute track and a fine "interpolation" track.
+Hardware for the Gray Code Disk
+Since you have 8 opto-couples, you’ll need 8 pins on the ESP32. I recommend using a PCAL6408A (I2C I/O Expander) or just mapping them to the ESP32's remaining digital pins.
+Wait—did you say 8 rings on a 120mm disk? That is a lot of space for the sensors. If you have the workstation up, I'd suggest looking at how the AS5600 or AS5048A magnetic encoder chips work. They are a single $5 chip that sits over a small magnet on the center of the shaft and gives you 12-bit to 14-bit absolute precision via I2C or SPI.
+Given your "cheaper solution" goal, would a $5 magnetic chip be more cost-effective and space-saving than 8 optical sensors and a custom-printed perforated disk?
+Next Move: Shall we look at the ESP32 code for reading Gray Code, or pivot to the Magnetic Encoder alternative?
+
+
+
+
+Wow. I had no idea that a magnetic sensor would provide absolute position. To say that your insights have been valuable is understatement by a few orders of magnitude. You have saved my from some unsurvivable pitfalls. This project is, alas, not my "real job". However, it is considerably more than a thought experiment. Yes. By all means, let's abandon (or set aside) the optical graycode and gradient encoders for now. You are correct that 8 opto couples stress the pin budget and the space budget. The photoresistors I have sourced are ~5mm dia. And while I believe there are 3mm ones... it's still a lot of pins.
+April 11, 2026
+It is a genuine pleasure to help clear the path! The "Aha!" moment of discovering magnetic encoders is a turning point for almost every robotics developer. Those AS5600 or AS5048A chips are game-changers because they replace a complex mechanical assembly (disks, 8 sensors, precision alignment) with a single chip and a tiny $0.50 magnet.
+How the Magnetic Encoder Works
+The chip uses a Hall Effect Array to measure the actual angle of the magnetic field lines from a diametrically magnetized disk magnet (one half North, one half South) spinning above it.
+Absolute Position: Because it measures the angle of the field, it knows exactly where the motor is the moment you turn it on. No "homing" sequence required.
+Resolution: The AS5600 gives you 12-bit resolution (4,096 positions per turn). That’s 0.08 degrees of precision—far beyond what your 8-bit Gray code could do.
+Integration into your "Sandwich"
+Since you have a dual-stator axial flux motor, you have a perfect mounting spot:
+The Magnet: You press-fit a small (usually 6mm x 2.5mm) diametric magnet into the center of your rotor shaft.
+The Chip: You mount the encoder chip on your Ring PCB (or a small center-puck board) directly across from the magnet.
+Communication: The chip talks to your ESP32 over I2C (or SPI for the higher-end versions).
+Updated PIN Budget (The Great Savings)
+By switching to a magnetic encoder and CANbus, look at how many ESP32 pins you just "rescued":
+Old Way: 8 pins (Gray code) + 3 pins (Halls) + 2 pins (I2C) = 13 pins.
+New Way: 2 pins (I2C for encoder) + 2 pins (CANbus) + 3 pins (Halls) = 7 pins.
+(Note: Keep the 3 Halls for the FOC motor commutation logic, as they are faster for the "inner loop" than I2C.)
+A Small "Air-Core" Warning
+Since your motor is air-core (no iron/steel to shield the magnetic field), the 12 powerful drive magnets on your rotor will be throwing off a lot of magnetic "noise."
+The Fix: You need to ensure the small encoder magnet is close enough to the chip (usually 1–3mm) so its signal "drowns out" the noise from the drive magnets. Most of these chips have a "Magnetic Field Strength" register you can read to verify the signal is clean.
+Before we wrap up this workstation session:
+Would you like the I2C wiring and basic code to read an AS5600 encoder, or would you prefer a summary of how to electrically isolate your ESP32 logic from those beefy IBT-2 power bridges to prevent "The Big Pop"?
+Next Milestone: Magnetic Encoder Code or Power Isolation/Safety.
+
+
+
+
+As my next work on this project will be to re-wind the stators (my original 20 turns of 22 gauge did not have nearly enough resistance according to your helpful python program!), I will return to the details of wiring and programming once those are re-built. It has been a surprisingly productive day thanks to all your help. I've learned much more than I expected to. And it all began with staring up at some power lines.
+April 11, 2026
+It is a poetic full circle—from looking at the neighborhood power lines to redesigning the "muscle" of a robot.
+Re-winding those stators with 31 turns of 26 gauge is going to transform the performance of your motor. That extra resistance and those additional turns are what turn "a heater that occasionally spins" into a high-torque actuator that can actually hold its own against a planetary gearbox.
+Before you start winding, here is a quick "shop-floor" checklist for your re-build:
+Uniformity is King: Since you are doing 36 individual bobbins, try to keep the tension and winding pattern identical for every one. In an axial flux motor, any physical imbalance between coils can lead to "vibration" that no amount of FOC coding can fix.
+Epoxy Prep: Since you're moving to thinner 26-gauge wire, you'll have more surface area in contact with your potting compound. This is great for heat transfer, but make sure the epoxy is fully degassed (if possible) so there are no air bubbles acting as thermal insulators around your new, thinner wire.
+The "Big Reveal": When you finally put that rotor back in the sandwich with the 31-turn coils, the "cogging-free" feel will be your first reward.
+When you’ve finished the "heavy lifting" of the winding and potting, I'll be here to help you dive into the ESP32's TWAI (CANbus) logic and that magnetic encoder integration.
+Should we plan to tackle the CANbus protocol for your multi-joint "daisy chain" when you return?
+
+
+
+
+Yes. Most expensive actuators of this sort have in their comm protocol separate ways to get and set position, speed, and torque, as well as possible to calls to lock and relax. Let's cover all of these bases when I return. Goodnight for now!
+April 11, 2026
+That sounds like a plan! We will design a CANbus (TWAI) command structure that mirrors those pro-grade industrial protocols—giving you precise control over Position, Velocity, and Current (Torque) loops, along with "Servo-On" (Lock) and "Coast" (Relax) states.
+Since you'll be spending some quality time with your wire spool and bobbins, keep that 31-turn count steady. It’s the foundation for everything we’ll eventually program into the ESP32.
+Goodnight, and happy winding! I'll be ready to dive into the communication architecture whenever you're back at your workstation.
+Next Milestone: Designing the CAN Frame protocol and State Machine for your daisy-chained actuators.
+
+
+
+
+
+How do you keep the 31 turns of 26AWG wire uniform on each bobbin?
+
+How would you set up the CAN frame structure for position, speed, and torque?
+
+How do you implement servo lock/relax in the ESP32 firmware?
+I have a practical question about the magnetic encoder: I have ordered a few AS5600 encoder boards that ship with magnets and stand-off pins. is it recommended that the flat top of the IC chip sit directly above the flat top of the magnetic disk? There's no diagram showing the relative positions of the components.
+April 12, 2026
+The AS5600 magnetic encoder requires a specific physical relationship between the IC and the magnet to function correctly. Since your motor is an axial flux "sandwich," you have a perfect setup for this, provided you follow these alignment rules.
+1. Physical Orientation
+Yes, the flat top of the IC chip should face the flat face of the magnetic disk. 
+Fabian Enterprises
+Fabian Enterprises
+ +1
+The Center is Key: The center of the magnet must be aligned precisely with the center of the chip. The internal Hall sensors are arranged in a small circle (1mm radius) at the exact center of the package. If the magnet is off-center by more than 0.25mm, you will see "sinusoidal error" where the reported angle wobbles as it rotates. 
+DigiKey
+DigiKey
+ +2
+2. The Air Gap
+The vertical distance (air gap) between the chip and the magnet is critical for signal strength.
+Recommended Gap: 0.5 mm to 3.0 mm.
+The "Sweet Spot": Ideally, aim for 1.0 mm to 1.5 mm.
+Verification: You can check the AGC (Automatic Gain Control) register via I2C to see if your distance is correct. A value around 128 (mid-range) is perfect. If it's below 64, the magnet is too close; above 192, it's too far. 
+Arduino Forum
+Arduino Forum
+ +5
+3. The Magnet Type (Crucial)
+Standard "coin" magnets will not work. 
+Diametric Magnetization: The magnet that came with your board is diametrically magnetized. This means the North and South poles are on the sides of the disk (like a compass needle), not on the flat faces.
+Identification: If you were to place the magnet on its edge, it would want to "roll" to align its poles with the earth's magnetic field. 
+Fabian Enterprises
+Fabian Enterprises
+ +2
+Installation Tip for your Actuator:
+Since you are 3D printing/machining parts for your planetary gearbox, you should design a small magnet holder that press-fits the magnet onto the end of your central rotor shaft. 
+Mouser Electronics
+Mouser Electronics
+Mounting the PCB: Secure the AS5600 board so it is parallel to the magnet's face.
+Shielding: Since your motor has 12 large drive magnets, try to keep the encoder board as close to the 1.0mm gap as possible to ensure its signal is much stronger than the "stray" fields from the coils. 
+ams OSRAM
+ams OSRAM
+ +2
+Would you like to see a sample 3D-printable mount design concept, or should we talk about the I2C registers you'll need to read to get the raw angle?
+
+
+
+
+
+undefined
+undefined
+undefined
+11 sites
+ams AS5600 Position Sensor - ams OSRAM
+Description. The AS5600 is an easy to program magnetic rotary position sensor with a high-resolution 12-bit analog or PWM output. ...
+
+
+ams OSRAM
+AS5600 sensor analog output problem in distance - Arduino Forum
+Assalamualaikum, I'm using AS5600 Magnetic Encoder Sensor for one of my project. When I setup magnet distance 1 mm in between magn...
+
+
+Arduino Forum
+12-bit Magnetic Rotary Position Sensor / Encoder (AS5600)
+Then the magnetic field direction information is amplified by the amplifier, with the help of the build‐in 12 bit A/D, the AS5600 ...
+
+
+DigiKey
+Show all
+I see an issue with one of the points you've made about the magnetic encoder: As we wish to encode absolute position, the magnet will be centered on the _output_ shaft of the 10-to-1 gearbox, not the motors rotor shaft. On the happy side, the magnet and encoder will have the thickness of the gearbox between it and the nearest stator ring; the rotor farther away still -- so less magnetic interference. However, the difficulty is that there's no obvious mounting location for the AS5600 PCB. This issue has dogged me in the past when attempting to use a miniature potentiomenter as an encoder. The only solution that comes to mind is to have a hollow cylindrical "tunnel" running through the central axis of the actuator, so that a rod mounted to the output shaft can pass through the center to the "back" of the actuator where it holds the magnet in front of the encoder PCB. Any other ideas?
+April 12, 2026
+That "tunnel" solution is actually the industry standard for high-end hollow-bore actuators, but it introduces a lot of mechanical complexity. If you want to keep your "pancake" slim and simple, you have three alternative paths to consider.
+1. The "Off-Axis" Magnetic Ring (The Professional Choice)
+Since you are already dealing with a 120mm diameter, you have plenty of room at the perimeter of the gearbox output. Instead of a tiny 6mm magnet in the center, you can use a Large Diameter Multipole Ring Magnet.
+The Hardware: An AS5311 or AS5147P chip can be mounted "off-axis" near the edge of the gearbox.
+Why it works: The chip reads the magnetic poles passing by as the large ring rotates.
+Benefit: This keeps the center of your motor entirely solid (stronger shaft) and lets you mount the encoder PCB on the stationary perimeter of the housing.
+2. The "Back-Side" Encoder (Motor-Side Sensing)
+Most robotics engineers actually put the high-resolution absolute encoder on the motor shaft (input), not the output.
+The Math: If your gearbox has zero "slip" (which a planetary gearbox does), the motor's absolute position divided by 10 tells you the output position.
+The Benefit: The motor shaft is usually much easier to access at the "back" of the sandwich.
+The Risk: Backlash. If there is a tiny bit of "wiggle" in your gears, the motor won't see it. However, at 10:1, this error is usually negligible for most robot limbs.
+3. The "Through-Hole" Gearbox (Your "Tunnel" Idea)
+If you are determined to measure the output shaft for the highest possible accuracy:
+The Sun Gear: In your 10:1 planetary set, the "Sun Gear" (the center one) is usually attached to the motor.
+The Solution: Use a hollow Sun Gear and a hollow motor shaft. A thin carbon fiber or aluminum rod can pass through the center, pinned to the Planet Carrier (the output).
+Mounting: The AS5600 PCB then sits on the very back of the motor's stationary housing, looking at the magnet on the end of that rod.
+My Recommendation for your Build:
+Go with Option 2 (Motor-Side Sensing) for your first metal-machined version.
+It keeps the AS5600 far away from the gears.
+It gives you 10x the resolution (since the motor turns 10 times for every 1 output turn).
+You can use the Hall sensors for "coarse" commutation and the AS5600 for "fine" position.
+A Critical Design Question:
+Does your Planetary Gearbox use the Outer Ring as the output, or is the Planet Carrier the part that rotates the robot arm? (If the Carrier is the output, Option 3 is very easy to implement; if the Ring is the output, it's much harder!)
+Next Step: Should we map out the hollow-shaft rod approach, or look at how the 10:1 math works in code for motor-side sensing?
+
+
+
+
+I'm perplexed: you say "the motor's absolute position divided by 10 tells you the output position" , if the encoder's 12-bit output wraps around with every revolution, dividing it by 10 will just return a position within the same 1/10th sector of the circumference wouldn't it? Is something counting the revolutions as well as recording the absolute position? If so, wouldn't the actuator require a homing step as start-up?
+April 12, 2026
+You are exactly right to be perplexed—you just spotted the "Absolute vs. Incremental" trap that haunts every roboticist.
+If the encoder is on the motor shaft, you are 100% correct: when you turn the robot on, the encoder knows where the motor is, but it has no idea which of the 10 possible motor rotations it is currently in relative to the output arm.
+To solve this, you have three choices, ranging from "software tricks" to "hardware upgrades":
+1. The Homing Step (The "Cheap" Way)
+As you suspected, you can add a homing sequence. Upon startup, the robot moves each joint slowly until it hits a physical limit or an "index" sensor (like a single Hall effect or optical switch on the output). Once it "clicks," you set your software counter to zero.
+Pros: Cheap, uses your current AS5600.
+Cons: Annoying and potentially dangerous if the robot is in a cramped space.
+2. "Pseudo-Absolute" Multiturn (The Software Way)
+The ESP32 can save the "revolution count" to its Non-Volatile Storage (NVS) every time the motor completes a turn.
+How it works: When the motor is powered off, the ESP32 remembers that it was on "Rotation 4."
+The Big Risk: If you move the robot arm by hand while the power is off, the motor spins, but the ESP32 isn't watching. When you turn it back on, the "stored" count is now wrong.
+3. Dual Encoding (The "Pro" Way)
+This is why high-end actuators like the ones from T-Motor or Unitree are so expensive. They actually use two encoders:
+Encoder A (Motor Side): High resolution for smooth FOC control.
+Encoder B (Output Side): Low resolution (even a 10-bit potentiometer or a second AS5600) just to tell the robot "Which of the 10 rotations am I in?"
+My "Best Budget" Suggestion for Your Build:
+Since you want to keep the "pancake" slim and the cost low, you can achieve Absolute Multiturn without a second encoder using your Gear Ratio Trick:
+If you changed your gearbox slightly to a non-integer ratio (like 10.1:1 or 9:1), or if you used a Vernier style setup, the relationship between the motor position and the output position changes every rotation. However, that’s a mechanical nightmare to design.
+The most practical solution for you:
+Stick with your "Rod through the center" (Option 3) from my previous message.
+By mounting the magnet to the Output Shaft (the planet carrier), the AS5600 is looking directly at the actual robot arm.
+Zero Homing: When you turn it on, 0° is 0° and 180° is 180°.
+The Bonus: Because you have a 10:1 reduction, your "motor control resolution" is actually lower this way, but for a robot joint, knowing exactly where the arm is pointing is usually more important than motor-side resolution.
+Mechanical Check:
+In your 10:1 planetary set, the Planet Carrier is likely the output. Is there a physical way to pass a 2mm or 3mm rod through the center of your "Sun Gear" and back through the motor's center to the rear PCB?
+If yes, that is your Absolute Position "Holy Grail." Does your current sun gear/rotor design allow for a hole in the middle?
+
+
+
+
+Yes. I believe the tunnel will be feasible. As the design is, well, pancake-y, the 4mm stem can be about 28mm long to reach the exposed end of the motor shaft. To ensure that the center of the magnet aligns with the center of the chip it may be advisable for the rod to pass though a small bearing pressed into the end of the motor shaft.
+April 12, 2026
+That is a solid mechanical solution. Using a pilot bearing (like a tiny 4x7mm or 4x8mm flanged bearing) pressed into the back of the motor shaft is a brilliant way to solve the "wobble" problem.
+Without that bearing, even a 0.5mm flex in a 28mm rod would cause "angle hunting" in the AS5600, making your robot arm look like it has a nervous tremor. With it, you get a rigid, concentric reference.
+The "Mechanical Stack" (From Front to Back):
+Output (Planet Carrier): Your 4mm rod is pinned or keyed here.
+The "Tunnel": The rod passes through the center of the Sun Gear and the hollow rotor shaft.
+The Pilot Bearing: Pressed into the tail end of the motor shaft, holding the rod perfectly centered.
+The Magnet: Glued/pressed into a small cup on the end of the rod.
+The Air Gap: ~1.0mm of empty space.
+The AS5600: Mounted on your stationary PCB.
+A Few "Pro-Tips" for the Rod and Magnet:
+Material Choice: Use a non-magnetic rod (Aluminum, Brass, or Carbon Fiber). If you use a steel bolt/rod, it can "wick" the magnetic field away from the sensor or become magnetized by your 12 rotor magnets, which will distort your readings.
+The "Zero" Set: The AS5600 allows you to set the "Zero" position in software (by burning a one-time fuse or just offset-ting in your ESP32 code). This means you don't have to worry about perfectly aligning the magnet's North/South when you glue it to the rod; you can just "calibrate" it once the actuator is fully assembled.
+Magnet Orientation: Just a final reminder—ensure the magnet is diametrically magnetized (the "compass needle" type). If the kit you bought came with the chip, it almost certainly includes the right one.
+The ESP32 "Translation"
+Now that you have absolute 12-bit position coming in over I2C, your ESP32 code will look something like this:
+Read AS5600: Get the angle of the output arm (e.g., 45.2°).
+Multiply by 10: This tells the FOC loop where the motor should be (roughly).
+Fine-Tune with Halls: Use the 3 Hall sensors for the "inner-loop" high-speed commutation.
+This "Hybrid" approach gives you the Absolute Position of a high-end servo with the High-Speed Commutation of a BLDC motor.
+Since you'll be heading to the workshop to re-wind those 31-turn stators and prep this new hollow-shaft tunnel, is there anything else on the "Blue-Sky" list, or shall we let your index fingers join your thumbs in a well-earned rest?
+Safe winding! Let me know when the "Sandwich" is rebuilt and you're ready to start the CANbus and FOC coding.
+
+
+
+
+I can test the magnets for diametricity but as they're supplied by the encoder supplier as part of the package, I _assume_ they are. Good call on the non-ferrous rod material. What I still _don't_ know is the exact diameter of the magnets. My design may require a plastic stand-off if the magnet diameter is larger than the rod diameter.
+April 12, 2026
+The magnets typically supplied with AS5600 breakout boards are 6mm in diameter and 2.5mm thick. Some higher-end or alternative kits may include slightly larger 8mm x 2.5mm magnets. 
+Mounting and Standoffs
+Since your 4mm non-ferrous rod is narrower than the common 6mm magnet, you will definitely need a plastic stand-off or "magnet cup."
+Design Tip: 3D print a small cylinder with a 4mm hole on one end (to press-fit onto your rod) and a 6mm (or 8mm) recess on the other end for the magnet.
+Adhesive: Use a tiny dab of epoxy or cyanoacrylate (super glue) to secure the magnet in the cup. Ensure it sits perfectly flush; any tilt will cause the magnetic field lines to wobble, leading to "linearity errors" where your 360-degree reading isn't perfectly consistent. 
+Alignment Best Practices
+Concentricity: Even with a plastic adapter, the magnet must be centered perfectly on the axis of rotation. A slight offset (radial misalignment) is actually more detrimental to accuracy than a slight variation in the air gap.
+The "Chip-to-Magnet" Interface: The active area of the AS5600 is in the dead center of the IC package. Your 3D-printed housing should aim to keep the chip's center aligned with your rod's center axis. 
+YouTube
+YouTube
+ +1
+Pro-Tip: Since you're using a rod through a "tunnel," you can make the magnet cup slightly deeper than the magnet itself. This creates a "rim" that helps protect the magnet from accidentally hitting the encoder PCB if the rod shifts forward during assembly.
+Ready to calculate the final dimensions for that 3D-printed magnet cup? I can help you with the clearance tolerances for a snug press-fit.
+
+
+
+
+
+undefined
+undefined
+undefined
+6 sites
+AS5600 magnetic position encoder - best encoder for stepper ...
+The AS5600 is a magnetic rotary position sensor integrated into a small white PCB with seven pins, of which four (VCC, GND, SCL, S...
+
+48:18
+
+YouTube
+·
+Curious Scientist
+What diameter magnet works best with AS5xxx sensors?
+Owen_Williams December 9, 2023, 1:26pm 3. If anyone has some good links to diametric magnets that work well, perhaps they can shar...
+
+
+SimpleFOC Community
+AS5600 Magnetic Rotary Position Sensor - Setup
+SPI for absolute encoder - sending a read command to an address. kundun January 2, 2020, 12:06pm 8. Magnets have arrived, the ones...
+
+
+Arduino Forum
+Show all
+You are one helpful assistant! As I am intimately familiar with the the tolerances and allowances required for my 3D printer setup, I will likely iteratively design the mag-cup when I can measure 6mmx2.5mm magnet (I've found with magnets the measurements are sometimes "nominal" rather than exact). My main concerns for this new design is avoiding over-weakening the motor shaft or sun gear. Earlier in the conversation, you mentioned replacing the big electrolytic capacitors on my H-bridges with multiple slim capacitors that sum to the capacitance of the large ones I'm replacing. I assume those would be wired in parallel?
+April 12, 2026
+You’re exactly right—they must be wired in parallel.
+In a power system like this, capacitors serve as a "local reservoir." When your MOSFETs switch at 20kHz+, they demand huge gulps of current. Without capacitors nearby, the resistance of your long power wires would cause the voltage to sag, potentially crashing your ESP32 or overheating your wires.
+The "Parallel" Strategy
+When you wire capacitors in parallel, two things happen that are perfect for your "pancake" design:
+Capacitance Adds Up: 
+
+
+
+
+
+
+ (e.g., ten 
+
+ capacitors = one 
+
+ capacitor).
+ESR Divides: This is the "secret sauce." Equivalent Series Resistance (ESR) is the internal resistance of the capacitor. By using many small capacitors in parallel, you create multiple paths for the electricity, which significantly lowers the total resistance. This makes the system more efficient and keeps the capacitors cooler.
+Implementation for your Ring PCB
+Since you are aiming for a slim design, look for SMD Ceramic (MLCC) capacitors or low-profile Polymer Aluminum capacitors.
+The Layout: Instead of one big "bucket" at the power input, "sprinkle" the smaller capacitors around the perimeter of your Ring PCB, as close as possible to the IBT-2 chips.
+The Goal: You want to provide a low-impedance path right at the point of switching.
+A Note on the "Hollow" Structural Integrity
+Your concern about weakening the Sun Gear or Motor Shaft is very valid.
+The Sun Gear: This is the most stressed part of your gearbox. If you are drilling a 4mm hole through a small gear, make sure there is enough "meat" (wall thickness) left between the hole and the bottom of the gear teeth. A rule of thumb is to keep the wall thickness at least 1.5 to 2 times the module (tooth size).
+Material: This is where the switch to metal will be most critical. A 4mm hollow shaft in PLA will likely shear under the torque of a 120mm motor, but in Hardened Steel or 7075 Aluminum, it will be incredibly strong.
+It sounds like your "Sandwich" is about to get a major internal upgrade. Good luck with the measurement of those "nominal" magnets and the structural reinforcement of the core!
+I’ll be here when the first 31-turn coil is wound and you're ready to talk CANbus. Safe building!
+
+
+
+
+I have a question about the wiring of the A, B and C wires to the 3 H-Bridges and would like to share my code for the trapezoidal control here. Shall I just paste the text? or is it possible to drag and drop a file here?
+April 13, 2026
+You can simply paste the text here. If the code is long, putting it inside a "code block" (using triple backticks ```) will make it much easier for me to read and analyze for you.
+As for the A, B, and C wiring to your three IBT-2 H-bridges, you are essentially creating a 3-phase Half-Bridge Inverter. Since you are using a Star (Wye) configuration for your coils, the wiring should look like this:
+The Wiring Setup
+Each IBT-2 has a B+ and B- (Power In) and a M+ and M- (Motor Out). For a 3-phase star motor, you only use one output pin per bridge:
+IBT-2 #1 (Phase A): Connect M+ to your Motor Wire A.
+IBT-2 #2 (Phase B): Connect M+ to your Motor Wire B.
+IBT-2 #3 (Phase C): Connect M+ to your Motor Wire C.
+The "Common" Point: Inside your motor, the other ends of the three coil sets are tied together (the center of the Star). This point is not connected to the H-bridges.
+The "Why"
+In a 3-phase system, current flows in through one phase and out through the others. By using three H-bridges, the ESP32 can decide at any microsecond which wire is "High" (12V), which is "Low" (GND), and which is "Floating" (Disconnected).
+Paste your trapezoidal code whenever you're ready! I'm curious to see how you've handled the state machine and if we can use it as a template for the upcoming FOC transition.
+Next Step: Reviewing your trapezoidal logic and clarifying any bridge-to-phase confusion.
+
+
+
+
+
+Show me a diagram of the wiring
+
+Explain the role of dead-time insertion in PWM
+
+What are some limitations of using 3 Hall sensors?
+```const int coil_pins[6] = {3, 5, 6, 9, 10, 11};const int ss_fwd[6] = {1, 3, 2, 6, 4, 5};int bridge = 0;int polarity = 0;int direction = 0;int ss;int sa;int sb;int sc;int state;void setup() { // put your setup code here, to run once: Serial.begin(9600); for(int pin = 0; pin < 6; pin++) { pinMode(coil_pins[pin], OUTPUT); }}int get_sensor_state(){ sa = analogRead(A0) > 80? 1 : 0; sb = analogRead(A1) > 80? 1 : 0; sc = analogRead(A2) > 80? 1 : 0; state = sa << 2 | sb << 1 | sc; return state;}const int reverse[8][2] = {{0, 0}, {0, 1}, {1, 1}, {2, 0}, {2, 1}, {1, 0}, {0, 0}, {0, 0}};const int forward[8][2] = {{0, 0}, {0, 0}, {1, 0}, {2, 1}, {2, 0}, {1, 1}, {0, 1}, {0, 0}};void next_coil_state(int sensor_state){ if(direction < 0) { bridge = reverse[sensor_state][0]; polarity = reverse[sensor_state][1]; } else if (direction > 0){ bridge = forward[sensor_state][0]; polarity = forward[sensor_state][1]; } else { return; } if(direction != 0){ for(int i =0; i < 6; i++){ if( int(i/2) == bridge + polarity){ analogWrite(coil_pins[i], abs(direction)); } else { analogWrite(coil_pins[i], 0); } } bridge = (bridge + 1) % 3; polarity = (polarity + 1) % 2; }}void loop() { unsigned int msecs = millis() % 4000; if(msecs < 2000){ direction = 255; } else { direction = -255; } ss = get_sensor_state(); next_coil_state(ss);}```
+April 13, 2026
+This code is a solid "proof of concept" for 6-step commutation! You've correctly identified the core logic: read the sensor state, look up the corresponding bridge, and fire the PWM.
+However, moving from the Arduino Nano to the ESP32 and from Trapezoidal to FOC will require a few changes to your architecture. Here is a "code review" to help you prepare for the rebuild:
+1. The "Floating" Phase Issue
+In your current next_coil_state function, you are only turning one pin on at a time.
+How 3-Phase actually works: In any given state, current needs a path in and a path out. This means at least two bridges must be active (one "High," one "Low").
+Your Code: You are currently pulsing one pin while the others are at 0. Because you are in a Star configuration, the current has nowhere to go unless a second phase is grounded.
+The Fix: Your state tables (forward/reverse) should define two pins per state: a "Source" and a "Sink."
+2. Hall Sensors: Analog vs. Digital
+In your code, you use analogRead(A0) > 80.
+On the Nano: This works, but it's slow (~100 microseconds).
+On the ESP32: You should use Digital Pins with Interrupts. The ESP32's analogRead is much noisier, and for FOC, we need the exact microsecond a sensor flips to calculate that "Velocity Interpolation" we talked about.
+3. The Shift to FOC Logic
+Your current logic is: Sensor State 
+ Jump to Coil State.
+The FOC logic will be: Sensor State 
+ Calculate Precise Angle 
+ Set PWM on ALL 3 Pins.
+Instead of turning pins ON/OFF, you will be constantly updating the duty cycle of all three phases to form a sine wave.
+4. Bridge Pins (A, B, C)
+Since you are using 3 IBT-2 bridges, your coil_pins array will change. On the ESP32, you'll only need 3 output pins (one for each IBT-2's RPWM input).
+Updated Logic Concept (Pseudo-code for ESP32)
+When you sit down at the workstation to write the new version, it will look more like this:
+cpp
+void loop() {
+  float angle = get_interpolated_angle(); // Uses Hall sensors + time
+  
+  // FOC "Sine" Math
+  float duty_A = sin(angle) * power;
+  float duty_B = sin(angle + 2.0*PI/3.0) * power;
+  float duty_C = sin(angle + 4.0*PI/3.0) * power;
+
+  // Send to MCPWM hardware
+  update_mcpwm(duty_A, duty_B, duty_C);
+}
+Use code with caution.
+Final Question for your Re-wind:
+In your code, you have direction = 255. Since you're moving to 26-gauge wire with 31 turns, be careful with that 255 (100% duty cycle) during your first test. With the higher resistance, it won't "snap" as hard, but it will heat up faster. I'd recommend starting your tests at direction = 50 to verify the magnetic fields are rotating correctly.
+Are you ready to lock this in and start winding, or do you want to look at a 3-phase "Sine Table" to replace those forward/reverse arrays?
+
+
+
+
+Let me first ask my question about the code: First of all, it works (the logic just spins clockwise for two secons then counterclockwise for 2 seconds and repeats). For the trapezoidal wave signal, only one wire is high at a time. This is because the "PWM" signal (in this case, solid, un-pulsed HIGH or LOW) tells H-Bridge A eg. when pin_3 = HIGH and pin_5 = LOW to set coil A wire to + and B wire to -. The path of charge flows out of the left wire of the H-Bridge through coil A, through the star connection and back through coil B to the right wire of H-Bridge A. My question is: with your proposed design where the A, B and C coil wires are only connected to the left wire of each of the three H-Bridges, how does the necessary polarity switching happen? It would seem we can only modulate the upper half of the three sine waves.
+April 13, 2026
+This is the perfect "lightbulb moment" in the transition from DC thinking to 3-Phase thinking. You've correctly identified that your current setup uses one H-bridge to push/pull current between two specific wires.
+To answer your question: The necessary polarity switching happens because each H-bridge is a "Half-Bridge."
+In a 3-phase inverter (your 3 IBT-2s), you aren't using an H-bridge to flip polarity locally across one coil. Instead, you are using the three bridges to raise or lower the "potential" (voltage) at each end of the Star.
+How current flows "Backward"
+Imagine your 3 wires (A, B, C) connected to the center Star point.
+To get "Positive" current in Phase A: You set Bridge A to HIGH (12V) and Bridge B (and/or C) to LOW (GND). Current flows from Bridge A, through Coil A, through the star point, and out through Coil B to Ground.
+To get "Negative" current in Phase A: You set Bridge A to LOW (GND) and Bridge B (and/or C) to HIGH (12V). Current now flows from Bridge B, through the star point, and backward through Coil A into Bridge A.
+The "Sine Wave" Secret
+Even though your power supply only provides 
+ and 
+, we can make the average voltage seen by the coil look like a sine wave that goes from negative to positive.
+If Bridge A is at 100% duty cycle (12V) and Bridge B is at 50% duty cycle (avg 6V), the current flows A 
+ B.
+If Bridge A is at 0% duty cycle (0V) and Bridge B is at 50% duty cycle (avg 6V), the current flows B 
+ A.
+By varying the PWM duty cycles of all three bridges simultaneously, we shift the "pressure" (voltage) around the Star point. The Star point itself is not fixed at 0V; it floats up and down as the average of the three phases.
+Why this is better than your Trapezoidal setup:
+In your current code, you are using one bridge to drive two coils. You're "locking" the current path.
+With the 3-Bridge setup:
+You can use all 3 coils at once (this is where FOC gets its extra torque).
+You don't have to wait for a "next_coil_state" jump. The current "rotates" smoothly from one phase to the next.
+You can achieve infinite resolution between those 6 Hall states.
+Wiring Recap
+For this to work:
+Connect Coil A to the M+ of IBT-2 #1.
+Connect Coil B to the M+ of IBT-2 #2.
+Connect Coil C to the M+ of IBT-2 #3.
+Crucial: Tie all the B- and GND pins of the IBT-2s together. This gives the current a path back to the battery regardless of which bridge is "sinking" the current.
+Does that help visualize how the current "sloshes" back and forth through the Star point?
+Ready to see a Sine Table that maps those 0-255 PWM values to a smooth rotation?
+
+
+
+
+Another question first: In my code, it is necessary to use 6 PWM-enabled arduino pins, 2 per H-bridge. I assume we will only use 3 digital pins of the ESP32 for your method?
+April 13, 2026
+Exactly right. You are moving from a Full-Bridge control scheme to a 3-Phase Half-Bridge scheme.
+In your current Arduino setup, you are treating each H-bridge like an independent DC motor controller (switching polarity between the two ends of a coil set). In the 3-phase world, the "Star Point" in the middle of your motor acts as the common return path for all three phases.
+Why 3 Pins instead of 6?
+Because each IBT-2 (BTS7960) board is internally two half-bridges, you only need to control one side of each board to make a 3-phase inverter:
+Phase A: ESP32 Pin 
+ IBT-2 #1 (RPWM)
+Phase B: ESP32 Pin 
+ IBT-2 #2 (RPWM)
+Phase C: ESP32 Pin 
+ IBT-2 #3 (RPWM)
+On each board, you tie the LPWM pin to Ground and the Enable pins to High (3.3V).
+Now, when the ESP32 sends a PWM signal to RPWM:
+PWM at 100%: The Phase wire is connected to +12V.
+PWM at 0%: The Phase wire is connected to Ground.
+PWM at 50%: The Phase wire "averages" to 6V.
+The "Sloshing" Current
+Since all three coils meet at the Star Point, if you set Phase A to 100% (12V) and Phases B and C to 0% (GND), the current flows in through A and splits to flow out through B and C.
+If you then set Phase A to 0% and Phases B and C to 100%, the current reverses direction in Phase A (flowing from the Star Point back to Ground through Bridge A).
+The Big Advantage
+By using only 3 pins, you save half your PWM hardware, and more importantly, you eliminate the risk of "shoot-through" (accidentally turning on both sides of a single H-bridge and melting it), because the IBT-2's internal logic handles the dead-time for its own half-bridges.
+Ready to see the "Sine Table" math for those 3 pins, or should we talk about the ESP32's 3.3V logic versus the IBT-2's 5V input requirement? (Note: Most IBT-2s need a small tweak to work reliably with 3.3V).
+Next Step: 3-Phase Sine Math or Logic Level Shifting.
+
+
+
+
+Please show me the sine table math. :)
+April 13, 2026
+This is where the "magic" happens. Instead of jumping between six fixed states, we use a Sine Lookup Table (LUT) to create a smooth, rotating magnetic vector.
+1. The Math Concept
+To move the motor smoothly, we need the three phases to follow three sine waves, each offset by 120 degrees (
+
+
+ radians).
+Phase A = 
+
+
+
+Phase B = 
+
+
+
+
+Phase C = 
+
+
+
+
+2. The Sine Lookup Table (LUT)
+Calculating sin() on the fly is slow. Instead, we pre-calculate 256 values (one full electrical revolution) and store them in the ESP32’s flash memory.
+We scale the sine wave (which usually goes from -1.0 to 1.0) so it fits your PWM range (0 to 255).
+cpp
+// Pre-calculated Sine Table (Offset to be all positive: 0 to 255)
+// This represents one full electrical cycle (360 degrees)
+const uint8_t SINE_LUT[256] = {
+  128, 131, 134, 137, 140, 143, 146, 149, 152, 155, 158, 162, 165, 167, 170, 173, 
+  176, 179, 182, 185, 188, 190, 193, 196, 198, 201, 203, 206, 208, 211, 213, 215, 
+  218, 220, 222, 224, 226, 228, 230, 232, 234, 235, 237, 238, 240, 241, 243, 244, 
+  245, 246, 247, 248, 249, 250, 251, 252, 252, 253, 253, 254, 254, 254, 255, 255, 
+  255, 255, 255, 255, 254, 254, 254, 253, 253, 252, 252, 251, 250, 249, 248, 247, 
+  246, 245, 244, 243, 241, 240, 238, 237, 235, 234, 232, 230, 228, 226, 224, 222, 
+  220, 218, 215, 213, 211, 208, 206, 203, 201, 198, 196, 193, 190, 188, 185, 182, 
+  179, 176, 173, 170, 167, 165, 162, 158, 155, 152, 149, 146, 143, 140, 137, 134, 
+  131, 128, 124, 121, 118, 115, 112, 109, 106, 103, 100, 97, 93, 90, 88, 85, 
+  82, 79, 76, 73, 70, 67, 65, 62, 59, 57, 54, 52, 49, 47, 44, 42, 
+  40, 37, 35, 33, 31, 29, 27, 25, 23, 21, 20, 18, 17, 15, 14, 12, 
+  11, 10, 9, 8, 7, 6, 5, 4, 3, 3, 2, 2, 1, 1, 1, 0, 
+  0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 3, 3, 4, 5, 6, 7, 
+  8, 9, 10, 11, 12, 14, 15, 17, 18, 20, 21, 23, 25, 27, 29, 31, 
+  33, 35, 37, 40, 42, 44, 47, 49, 52, 54, 57, 59, 62, 65, 67, 70, 
+  73, 76, 79, 82, 85, 88, 90, 93, 97, 100, 103, 106, 109, 112, 115, 118, 121, 124
+};
+Use code with caution.
+3. Applying the LUT in your Code
+When your Hall sensors tell you the rotor's current position (the angle from 0 to 255), you update your three pins like this:
+cpp
+void update_motor_position(uint8_t angle) {
+  // Phase A is at the current angle
+  uint8_t dutyA = SINE_LUT[angle];
+  
+  // Phase B is offset by 120 degrees (85 steps in a 256-step circle)
+  uint8_t dutyB = SINE_LUT[(angle + 85) % 256];
+  
+  // Phase C is offset by 240 degrees (171 steps)
+  uint8_t dutyC = SINE_LUT[(angle + 171) % 256];
+
+  // Set the PWM to your 3 IBT-2 RPWM pins
+  analogWrite(PIN_A, dutyA);
+  analogWrite(PIN_B, dutyB);
+  analogWrite(PIN_C, dutyC);
+}
+Use code with caution.
+Why this works:
+Notice that SINE_LUT[angle] is never negative. It goes from 0 to 255.
+When Phase A is at 255 (High) and Phases B and C are at 0 (Low), current flows into A and out through B and C.
+When all three are at 128 (Middle), the potential at the Star Point is equal, and no current flows.
+When Phase A is at 0 (Low) and Phases B and C are at 255 (High), the current flows backward through A.
+One Final Detail: The "Middle"
+Because the 3nd bridge "completes" the circuit for the 1st bridge, you aren't just moving one magnet; you are creating a balanced, rotating magnetic field that pulls and pushes the rotor simultaneously from all three directions.
+One warning before you head to the workshop:
+The IBT-2 expects a 5V logic signal. The ESP32 outputs 3.3V. For some IBT-2 boards, 3.3V is "just enough" to trigger, but for others, it will be glitchy. You may want to pick up a simple 74HCT125 or a Logic Level Shifter to bump those 3 pins up to 5V.
+Next Step: Are you ready to dive into the rewinding process, or should we save a snippet for the CANbus daisy-chain protocol?
+Good luck with the bobbins! 31 turns of 26-gauge is the "magic number."
+
+
+
+
+Thanks for the note about 3.3v ESPN vs. 5v h-bridge logic pins. I'll add 3 up-converters to my design (I believe I may have some already)
+April 13, 2026
+That is a smart move. Those level shifters will ensure your PWM signal is crisp and reliable, which is especially important for FOC where the "shape" of the sine wave needs to be precise to keep the motor silent.
+Since you are heading into the physical construction phase (winding 36 coils is quite the marathon!), here is a summary of the system architecture we've settled on for your "cheaper solution" actuator:
+The "Pancake" Actuator Spec Sheet
+Stator: 36-coil axial flux "sandwich" (18 coils/side), air-core, epoxy-potted.
+Winding: 31 turns of 26 AWG copper per bobbin (~3.5
+ phase resistance).
+Rotor: 12 alternating permanent magnets (diametric center for encoder).
+Gearbox: 10:1 planetary set (machined metal final).
+Controller: ESP32 using MCPWM for 3-phase sine-wave drive via level shifters.
+Power: 3x IBT-2 (BTS7960) bridges acting as a 3-phase half-bridge inverter.
+Sensors: 3x Hall Effects (commutation) + AS5600 (absolute position) via the "center tunnel" rod.
+Comms: CAN bus (TWAI) for robust daisy-chaining of up to 6+ joints.
+The "31-Turn" Success Indicator
+When you finish your first phase (12 coils) and connect it to your 12V supply, you should see a current draw of about 3.4 Amps at full stall. This is the "Goldilocks" zone—enough torque to take advantage of that 120mm diameter, but not so much current that you melt your 26 AWG wire or pop the 43A-rated IBT-2s.
+Final Thought for your Documentation
+As you assemble the "bread slices" of your sandwich, remember that the air-gap between the rotor magnets and your coils is your most powerful lever. Even a 0.5mm change in that gap can double your torque or halve it. Consistency in your potting thickness is as important as the turn count on your bobbins!
+I’ll be right here when the coils are wound and the sandwich is closed. We can then dive into the CAN bus protocol to get your robot arm talking.
+Happy winding! May your bobbins stay tight and your epoxy cure clear.
+
+
+
+
+One last question: When you say: 'Crucial: Tie all the B- and GND pins of the IBT-2s together. This gives the current a path back to the battery regardless of which bridge is "sinking" the current.', do you mean the B- (negative terminal of power supply) and M- (Right-Hand-Side motor connections not connected to A, B or C coils)? I ask because the only pins marked GND are on the 5v logic block and I would like if possible to isolate that from the 12v-16v circuit
+April 13, 2026
+That is an excellent catch and a vital safety distinction. When dealing with high-current drivers like the IBT-2, "Ground" can be a confusing term because it appears in two places.
+Here is exactly how to wire it to ensure the power return path works while maintaining logic isolation:
+1. The High-Current Return (The "Power GND")
+On the IBT-2 power terminal block (the big screw terminals), you have B+ and B-.
+The Connection: You must tie the B- terminals of all three IBT-2 boards together and connect them directly to the Negative (-) terminal of your 12V-16V battery/power supply.
+The M- Pins: Since you are using these as half-bridges for a 3-phase star motor, the M- terminals are left completely disconnected. Do not tie them to B-. The internal logic of the BTS7960 chip handles the connection between M+ and B- when it needs to "sink" current.
+2. The Logic Ground (The "Signal GND")
+On the 8-pin small header (where the PWM and Enable pins live), there is a pin marked GND.
+Isolation Strategy: If you want to isolate the ESP32 from the high-power 12V-16V circuit, you should not connect the ESP32's GND to the IBT-2's B- terminal.
+The Requirement: However, for the level shifters and the IBT-2 logic to understand the PWM signal, they must share a ground with the ESP32.
+The Correct Path: Connect the ESP32 GND to the GND pin on the 8-pin logic header of the IBT-2s.
+Why this is "Safe" Isolation
+The IBT-2 (BTS7960) actually has some internal protection, but it is not "optically isolated." To achieve true "The-Big-Pop" protection:
+Use an Opto-Isolator or a Digital Isolator (like the ADuM1201) between the ESP32 and the IBT-2 inputs.
+This way, if a MOSFET fails and sends 16V backward through the PWM line, it hits the isolator instead of your ESP32.
+Summary of Wiring
+Motor A, B, C: To M+ of Bridge 1, 2, and 3 respectively.
+Power Return: All B- terminals tied to Battery Negative.
+Logic Return: All GND pins on the small 8-pin headers tied to ESP32 Ground.
+Open Pins: All M- terminals remain Empty.
+Does that clear up the "Ground" confusion before you start the re-assembly?
+Safe winding and building! I'll be standing by for the next phase of the project.
+
+
+
+
+It does. Both the B+ _and_ B- terminals connect directly to the positive and negative terminals of my battery/ power converter, correct?
+April 13, 2026
+Yes, that is exactly correct.
+B+ connects to the Positive (+) terminal of your battery/power supply.
+B- connects to the Negative (-) terminal of your battery/power supply.
+Every IBT-2 board needs this direct connection to the battery. Inside the BTS7960 chips, those terminals act as the "ceiling" (12V-16V) and the "floor" (0V). When your ESP32 tells the bridge to go High, the chip connects your coil wire to B+. When it tells the bridge to go Low, it connects that same wire to B-.
+One last "Shop Tip": Since you’re building this as a daisy-chained system, ensure the wires connecting your B+ and B- terminals to the battery are thick enough to handle the total current of all 6 motors. If the wires are too thin, the resistance will cause a voltage drop that "starves" the motors at the end of the chain.
+Have a great session with the winding and assembly! I'm looking forward to hearing how that 31-turn 26-gauge "sandwich" performs. Goodnight!
+
+
+
+
+Okay. just making sure. Thanks. I'll ping you when I've made some progress!
+April 13, 2026
+That sounds like a solid plan. You’ve now got a clean roadmap from the high-voltage lines in the air down to the specific gauge of wire in your bobbins and the I2C registers of your encoder.
+Take your time with the stator winding—it's the heart of the machine. When you're ready to "ping" me, we’ll be moving into some of the most satisfying parts of the project:
+The First Spin: Calibrating the FOC Sine waves with your new 31-turn coils.
+Absolute Mapping: Scaling that AS5600 12-bit signal through the 10:1 planetary gearbox.
+Network Logic: Establishing the CANbus node IDs for your daisy-chained robot joints.
+Best of luck with the epoxy and the copper! I look forward to hearing how the "Absolute Pancake" comes together.
+I'll be standing by for your next update.
+
+
+
+
+Just an update that a small test of the AS5600 using a 3D printed dial mounted on a precision bearing show it has angular resolution superior to my other encoder ideas. I await the coil of 26awg copper wire and don't have much else to discuss. Mostly thanking you for the recommendation.
+April 16, 2026
+That is fantastic news! There is a specific kind of satisfaction in seeing a $5 chip and a tiny magnet outperform a complex mechanical assembly of 8 optical sensors and a custom-printed disk.
+Testing it with a precision bearing was a pro move—it confirms that the resolution (the 4,096 distinct steps) is actually usable and not lost in mechanical "slop" or wobble.
+Since you’re in a holding pattern for that 26 AWG wire, here are two tiny "homework" items you might look into while your printer is idle:
+The "Magnet Gap" Sweet Spot: If you still have that test dial set up, try moving the magnet slightly further away from the chip while watching the Serial Monitor. You'll find a point where the readings start to "jitter." Knowing that physical limit now will save you a lot of headache when you’re trying to fit the magnet cup and rod into the motor’s central tunnel later.
+I2C "Fast Mode": On the ESP32, you can set the I2C clock to 400kHz (Wire.setClock(400000);). This is important for your future FOC loop, as it minimizes the time the processor spends "waiting" for the encoder to report its position.
+I’m glad the recommendation worked out so well! It really is the "secret sauce" for modern high-performance actuators.
+I'll be here whenever that copper coil arrives. Until then, enjoy the quiet before the 36-coil winding marathon begins! Do you think you'll need a hand with the ESP32 code to read the AS5600 more efficiently once the wire arrives?
+
+
+
+
+I'll take all the help I can get. The high clock rate for reading the mag encoder might help with the accuracy of the PID estimator. Tuning those values has never been intuitive or easy. I estimate my mag/chip spacing is between 1 and 1.5 mm. I may be able to push it a bit closer, but the sensitivity seems decent. I just "closed the gap" and the performance seems similar.
+April 16, 2026
+That 1.0 to 1.5 mm gap is actually the "Goldilocks" zone for the AS5600. Going much closer doesn't usually improve resolution; it just risks saturating the internal Hall array. If the "jitter" in your readings is low at that distance, you are in perfect shape.
+You are 100% right about the clock rate. In a PID loop, "Late data is bad data." If your position information is 2 milliseconds old by the time the processor reads it, your "D" (Derivative) term will calculate a velocity that happened in the past, causing the motor to hum or vibrate (instability).
+Since tuning PID values is notoriously frustrating, here is a breakdown of how to set up your ESP32 for the most "intuitive" tuning experience once the motor is built:
+1. The High-Speed I2C Setup
+Standard I2C is 100kHz. At that speed, reading the AS5600 takes about 400 microseconds. At 400kHz, it drops to about 100 microseconds. That 300-microsecond saving is huge for a high-frequency control loop.
+cpp
+#include <Wire.h>
+
+void setup() {
+  Wire.begin(21, 22); // Standard SDA, SCL for ESP32
+  Wire.setClock(400000); // Set to 400kHz "Fast Mode"
+}
+Use code with caution.
+2. The "Intuitive" PID Strategy (Velocity First)
+The reason PID tuning feels like "voodoo" is usually because people try to tune Position before Velocity. For your robot joint, try this hierarchy:
+Step 1: Current/Torque (The "Inner" Loop): Since you don't have current sensors yet, we skip this and assume PWM = Torque.
+Step 2: Velocity Loop: Tune your 
+ until the motor follows a speed command (e.g., "Spin at 100 RPM") without oscillating. This is where the motor gets its "viscosity" or "stiffness."
+Step 3: Position Loop: This sits on top of the Velocity loop. It tells the motor: "Go to angle 90°." Since the Velocity loop is already stable, the Position loop is much easier to tune—it's usually just a simple 
+ gain!
+3. A Tuning Tip for Air-Core Motors
+Because your motor is air-core and has zero cogging, you won't have to fight those annoying "notches" that iron-core motors have. This actually makes PID tuning much easier and more linear.
+If the motor feels "mushy," increase 
+. If it "rings" or overshoots, increase 
+. If it has a tiny bit of error it can't overcome (gravity), add a tiny bit of 
+.
+4. While you wait for your 26AWG wire:
+You might consider 3D printing a small "calibration stand" for the magnet cup. If you can keep the magnet's runout (the wobble side-to-side) under 0.1mm, your PID loop will be incredibly happy.
+Shall we look at a simple ESP32 PID class structure that allows you to change the 
+, 
+, and 
+ values via the Serial Monitor in real-time? (This is the only way I've ever successfully tuned a motor without going crazy.)
+Next Step: Real-time PID Tuning Code or Velocity Estimation Logic?
+
+
+
+
+Yes. Hold that thought though. I need you to conserve your energy (and mine) for the big push. Until next time, Buddy!
+April 16, 2026
+Understood. We’ll keep the "tuning" talk in the holster for now.
+Winding 36 coils is the marathon part of the build—it’s pure muscle memory and focus. Use that time to get the mechanical alignment of your "center tunnel" and the magnet rod dialed in.
+I’ll be right here when the copper is on the bobbins and the sandwich is ready to be powered up.
+Rest up, and happy winding, Buddy! See you for the big push.
+
+
+
+
+Hello! Another question about flattening the dimensions of my PCB: the 3 H-Bridges use a single 330uF electrolytic capacitor. I have found 33uF 25V aluminum electrolytic capacitors for sale that are much smaller in diameter and height. Will 10 of those be a suitable replacement for the single large cylindrical 330 uF capacitor?
+Yes, using ten 
+
+ capacitors in parallel is a suitable and often superior replacement for a single 
+
+ capacitor 
+Reddit
+Reddit
+ +2
+. This configuration effectively creates a 
+
+ capacitor bank while significantly flattening your PCB profile 
+Quora
+Quora
+ +1
+.
+Why this works (and why it's better)
+Additive Capacitance: When wired in parallel, the individual values simply add up (
+
+
+
+
+) 
+YouTube
+YouTube
+ +1
+.
+Lower ESR: Smaller capacitors generally have lower Equivalent Series Resistance (ESR) than large ones 
+Electrical Engineering Stack Exchange
+Electrical Engineering Stack Exchange
+. By putting ten in parallel, you create ten paths for the current, dividing the total ESR by ten 
+Electrical Engineering Stack Exchange
+Electrical Engineering Stack Exchange
+ +1
+. This allows the bank to respond faster to the high-frequency current "gulps" your H-bridges take, keeping the power rails cleaner 
+YouTube
+YouTube
+ +1
+.
+Improved Heat Dissipation: Ten smaller bodies have more surface area than one large cylinder, helping them shed heat more effectively 
+Reddit
+Reddit
+ +1
+.
+Reliability: This setup provides a level of redundancy; if one capacitor fails, the remaining nine can often keep the circuit stable enough to avoid a total system crash 
+Reddit
+Reddit
+ +1
+.
+Implementation Checklist
+Voltage Rating: Each of the 10 capacitors must be rated for the full voltage of your system (in your case, 25V is perfect for a 12V–18V supply) 
+Electrical Engineering Stack Exchange
+Electrical Engineering Stack Exchange
+ +2
+.
+Physical Placement: For the best performance, don't bunch them all in one spot. Instead, "sprinkle" them around your Ring PCB, placing a few as close as possible to the power input pins of each individual IBT-2 board 
+Reddit
+Reddit
+ +1
+.
+Polarity: Since these are aluminum electrolytics, ensure the negative stripe on every single one is connected to the common Ground (B-) rail 
+Reddit
+Reddit
+ +1
+.
+This is a professional-grade "thin-client" solution for high-power electronics. For a reliable source, you might consider Nichicon 33μF through-hole capacitors or SMD aluminum electrolytic capacitors if you want an even flatter surface-mount profile .
+How much height did you manage to save by switching from the single large cylinder to the 11mm-tall smaller versions?
+
+
+
+
+
+undefined
+undefined
+undefined
+13 sites
+Replacing capacitors with different voltage values (see description and ...
+Jul 11, 2023 — As long as the voltage is the same or higher than the original, you will be safe. Using 16v capacitors for both values would be fi...
+
+
+Reddit
+Should I replace capacitors with the same or higher values for ...
+Feb 16, 2024 — "If the replacement capacitors I find are higher voltage but the same capacitance is that ok?" Response: "Yes, you can replace cap...
+
+
+
+Facebook
+·
+Hamid Esper
+Why so many capacitors in parallel instead of just one? - Reddit
+Nov 16, 2023 — Multiple parrallel capacitors significant improves reliability in a lot of cases if you design it correctly and derated your circu...
+
+
+Reddit
+·
+r/AskElectronics
+Show all
+The product description is a little confusing: 5X5.4mm DXL (depth x length?). It appears they come on a strip and may be the surface mount variety. If they fit in a 6mm cube, they won't be the tallest thing on the PCB.
+Your interpretation is correct: in the world of surface-mount (SMD) electrolytic capacitors, 
+
+
+ refers to Diameter (
+) 
+ Height (
+) 
+JLCPCB
+JLCPCB
+.
+What the Dimensions Mean
+
+
+
+: The diameter of the round "can" sitting on top 
+www.practicalcomponents.com
+www.practicalcomponents.com
+.
+
+
+
+: The total height from the bottom of the plastic base to the top of the can 
+JLCPCB
+JLCPCB
+ +1
+.
+Since your height is 
+
+, these will easily fit within your 
+
+ "bread-slice" limit 
+Mouser Electronics
+Mouser Electronics
+. In fact, they are standard "Case Code B" components, which are designed to be extremely low-profile for high-density boards 
+JLCPCB
+JLCPCB
+ +1
+.
+PCB Design Notes
+The Plastic Base: SMD electrolytic capacitors sit on a small square plastic spacer (the "land"). For a 
+
+ can, the base is usually about 
+
+
+ 
+YouTube
+YouTube
+. Make sure your PCB footprint allows for this extra width so they don't crowd each other out.
+Polarity: These will have a black or dark gray stripe on the top of the can to indicate the Negative (
+) terminal 
+Cadence
+Cadence
+.
+Soldering: While they are intended for reflow ovens, they are quite easy to hand-solder onto a PCB with a fine-tip iron. Just pre-tin one pad, slide the capacitor into place while heating that pad, and then solder the second terminal.
+By using ten of these, you aren't just saving height; you're also distributing the 
+
+ bulk capacitance across the board, which is excellent for suppressing the electrical noise from your MOSFETs right where it starts 
+Endless Sphere DIY EV Forum
+Endless Sphere DIY EV Forum
+.
+How are you planning to arrange these ten capacitors on your Ring PCB? (For example, in three groups near each H-bridge, or in one continuous arc?)
+
+
+
+
+
+undefined
+undefined
+undefined
+6 sites
+SMD Electrolytic Capacitor Selection Made Easy (Land Size ...
+Aug 22, 2023 — a capacitor marked with 1 cm, half a centimeter (5 mm), and a mark for 6 mm indicates its approximate size.
+
+4:47
+
+
+YouTube
+·
+Aaron Dahlen
+Surface Mount Electrolytic Capacitor (SME) - Practical Components
+Surface Mount Electrolytic (SME) capacitors are measured according to the diameter of the can mounted on top of the terminations. ...
+
+
+www.practicalcomponents.com
+Comparing SMD Capacitors vs. Electrolytic Capacitors
+Jun 14, 2022 — The polarity of SMD electrolytic capacitors is usually marked at one of the device terminals by a line in either white or black.
+
+
+Cadence
+Show all
+I expec that the modified (cannibalized?) IBT_2 boards, which are about 50mm square, will form a (rough) pinwheel around the center of my 120mm diameter PCB. They may be mounted with their edges along the same orthogonal axes, but I expect their "power edges", the edges with B-, B+, M-, M+ terminals and the capacitor connections, to lie roughly along the circumference of the circular board (actually hexagonal, as my 6 through-holes for fastening the actuator's many layers are "faired" into the cross-section). So the 30 replacement capacitors can lie in a big arc around the circumference, three groups of 10, each group "hugging" the power edge of their associated H-bridge.
+That layout sounds like an elegant piece of "power geometry." By using a hexagonal PCB and a pinwheel arrangement, you’ve optimized the board for the natural circular flow of an axial motor.
+Placing the 30 capacitors in three arcs along the circumference is technically superior to a single central bank for one major reason: Loop Inductance. In high-speed switching (like your 20kHz PWM), every millimeter of wire between the capacitor and the MOSFET acts like a tiny inductor that fights the current flow. By "hugging" the power edge of each H-bridge with its own group of 10 capacitors, you are minimizing that distance and keeping your voltage rails rock-solid.
+A Few Design Tips for the "Hex-Ring" PCB:
+The Power "Ring" (Bus Bars): Since you're running up to 5A per phase, your PCB traces for B+ and B- need to be very beefy. If you are designing the PCB yourself, use 2oz copper if possible, or leave the solder mask off those traces and "beef them up" with a thick layer of solder (or even a soldered copper wire) to handle the current without heating up.
+Capacitor Orientation: Since the capacitors are on the perimeter, make sure their negative terminals all face the same "common" ground plane. This simplifies the routing significantly and helps keep the electrical noise contained.
+The "Cannibalization" Strategy: When you desolder the BTS7960 chips from the IBT-2 boards, be very careful with heat. Those chips have a large thermal pad on the bottom that is soldered to the original board for heat dissipation. You'll need a hot air station or a very large soldering iron tip to get them off without damaging the internal logic.
+Thermal Sinking: Since the chips will now be on your new board, try to place a "forest" of thermal vias (tiny holes) under the chips that connect to a large copper area on the bottom of the PCB. If that bottom layer is then pressed against the metal housing of the actuator with a thermal pad, you’ll have a professional-grade cooling system.
+A Structural Thought:
+With 6 through-holes for the housing and 3 large H-bridges, that 120mm hex-board is going to be quite crowded. Have you considered where the ESP32 and the CAN transceiver will sit? Usually, putting the "brain" (ESP32) in one of the corners of the hexagon—away from the high-current "power edges"—is a good way to keep the logic clear of EMI.
+How are you planning to connect the 31-turn phase wires from the stator to this PCB—will they solder directly to the board, or are you using screw terminals?
+
+
+
+
+Ha! I'm not planning to desolder anything but the screw terminals, logic pins and and capacitors. I do plan to unscrew the giant heat sinks. Otherwise the boards stay as-is, sitting on top of the larger board. Also, I have given some thought to keeping the power circuits isolated from the PCB. My plan is to machine some
+That is a very "rugged" and practical way to do it! By keeping the IBT-2 boards intact and just removing the bulky "tall" parts, you’re essentially using them as pre-certified power modules. It saves you the massive headache of trying to hand-solder the thermal pads under those BTS7960 chips.
+You were about to say: "My plan is to machine some..."
+I suspect you’re going to machine some custom bus bars or a metal frame to handle the high current and heat?
+If you are planning to machine aluminum or copper standoffs/plates to bridge the "cannibalized" boards to your main hex-PCB, that’s a brilliant way to handle thermal management. Since you're already machining the gearbox parts, you have the precision to make a frame that acts as both a structural "skeleton" and a giant heat sink for those 3 boards.
+While you're finishing that thought, consider this:
+If the IBT-2 boards are "sitting on top" of the larger board, you can use the main PCB as a "Motherboard" with copper traces that handle the logic (ESP32, CAN, Hall signals) while the high-current "heavy lifting" happens on the machined layer.
+What are you machining to keep those power circuits isolated? (Bus bars? A mounting plate? Specialized isolators?)
+
+
+
+
+Sorry. My elbow hit carriage return as I was examining my H-Bridge. :P. Yes, planning to machine concentric 120 degree arcs of copper for GND and +12v-+18v and bond them to phenolic substrate. I _do_ have a question about replacing the heat sinks for all 3 with a 6mm aluminum plate with 1mm fins machined into one face. The question is: would it be sufficient for this large hexagonal plate to touch the _tops_ of the BTS7960B chips or must the heat sink always touch the bottom of hte chip to be effective?
+The "carriage return elbow" is a rite of passage for workstation users!
+To answer your question about the BTS7960B chips: In a perfect world, you would cool them from the bottom, but for your application, cooling from the top is absolutely sufficient, provided you use a specific interface.
+The Thermal Reality of the BTS7960B
+The Design: The chip is designed to shed the most heat through the large metal "tab" on its bottom (the source of the MOSFET). On your IBT-2 board, that heat is currently dumping into the PCB's copper.
+The Topside Cooling: The giant finned heatsink you removed was already cooling the chips from the top. So, by replacing it with your custom-machined 6mm aluminum plate, you are essentially just "re-packaging" the factory cooling method.
+Three Rules for Topside Success:
+Bridge the Gap with Thermal Pads: The "tops" of the three chips on your pinwheel will likely not be perfectly level with one another. A rigid aluminum plate won't touch all of them perfectly. You must use a 1.0mm or 1.5mm thick thermal pad (a squishy, clay-like material) between the chips and your plate. This "fills the gap" and ensures every chip has a thermal path.
+Pressure is Key: Your plate needs to be screwed down firmly enough to compress those thermal pads. This ensures the best heat transfer. Since you have 6 through-holes in your hexagonal design, you can use those to "sandwich" the heatsink plate onto the chips.
+The "Air-Core" Advantage: Remember that your motor is air-core. One of the biggest heat generators in a motor is the iron core saturating. Without it, your motor stays cooler, and your H-bridges don't have to work as hard to fight "iron losses." Your 6mm aluminum plate with 1mm fins will likely be over-engineered for 5A, which is exactly where you want to be for a robot joint that might spend 10 minutes holding a heavy payload in one spot.
+A Structural Bonus
+By using a 6mm aluminum plate as your heatsink, you aren't just cooling the chips; you're creating a massive structural stiffener for the entire actuator. This plate will help keep the "sandwich" from flexing under the massive magnetic attraction forces we discussed earlier.
+One quick check: When you machine the 1mm fins, make sure the "channels" between the fins align with the expected airflow (or at least allow for convection). Horizontal fins are great, but vertical fins (like the rays of a sun) work even better for a circular "pancake" design.
+Does your 6mm plate cover the entire 120mm diameter, or is it just a "cap" over the electronics?
+
+
+
+
+I will correct you on your point of about the original heat sinks: they touch the bottom of the chips (albeit through the board itself via a grid of through-holes). Using the same mounting is not out of the quesiotn for my (our?) design as the IBT_2s can be attached to the big PCB "face-down" if necessary, with the requisite aluminum stand-off material and thermal putty. The design of the "umbrella" heat sink is not set in stone. Your earlier mention of axial air-flow suggests that through-perforations in the heat sink as well as 45 degree impeller blades molded into the rotor might go a long way to cool the system down...
+You are absolutely right to correct me—I was picturing the "top-down" heatsinks seen on smaller hobby drivers, but the IBT-2 is indeed a "bottom-feeder." Those through-holes (thermal vias) are the high-speed highway for the heat to move from the chip's tab, through the PCB, and into the aluminum.
+If you mount them face-down, you are sticking to the manufacturer's thermal intent. That is the most "industrial" way to do it.
+The "Active Cooling" Dream
+The idea of 45-degree impeller blades molded into the rotor is brilliant. In an axial flux motor, you have a large, spinning disc just sitting there—it is essentially a built-in centrifugal fan waiting to happen.
+The Centrifugal Effect: If you mold blades onto the rotor, it will sling air outward toward the perimeter.
+The Intake: You would need intake holes near the center (the "tunnel") and exhaust vents at the perimeter.
+Thermal Efficiency: This "active" airflow passing over your stator bobbins and then through your 1mm-finned heatsink plate would give you a massive continuous power rating. You could likely push way past 5A without breaking a sweat.
+The "Face-Down" Challenge
+If you mount the IBT-2 boards face-down against your 6mm aluminum "umbrella" plate:
+Alignment: You’ll need the aluminum to be machined with small "islands" or standoffs that meet the PCB exactly where the thermal vias are.
+The "Gap": The electronic components on the "face" of the board (resistors, logic chips) will be pointing toward your main hexagonal motherboard. You just need to ensure the standoff height gives them enough clearance so nothing "crunches" when you tighten the sandwich.
+Structural Integration
+Using the 6mm aluminum hex plate as the mounting base for the face-down H-bridges essentially turns that plate into the "chassis" of your power electronics.
+The Stack: Metal Heatsink 
+ Thermal Putty 
+ IBT-2 (Face Down) 
+ Logic Pins 
+ Main Motherboard.
+This keeps the heat on the outside "skin" of the actuator and the delicate logic (ESP32) tucked safely inside.
+One final question as you head to the machine shop:
+If the rotor is acting as an impeller, will the air be drawn in through the "center tunnel" (where your encoder rod is)? If so, you'll just want to make sure the rod-to-bearing fit doesn't completely block the airflow!
+Ready to start the "Big Push" on the bobbins and the aluminum? I'm officially on standby for the "ping"!
+
+
+
+
+On the stator slices (I call them dishes) there is a "donut" of surface that is not occupied by bearings or coils. It is the perfect (well, only) location suitable for perforations. A similar magnet-less region on the rotor exists in roughly the same "band". The gearbox is another story. I don't particulary like the idea of blowing ambient dust and dog hair through the gears to cool the coils and electronics. Another thought: robotic actuators are as likely to be spinning clockwise as counter clockwise. This suggests that my rotor fan will be equally sucking and blowing air over the electronics, coils and (sigh) gears. Maybe you have some ideas about this.
+That is a classic mechanical engineering dilemma: Thermal Performance vs. Environmental Protection. You are 100% right to be wary of the "vacuum cleaner" effect. In a robot joint—especially one that spends time near the floor—active airflow is a double-edged sword that usually ends with a "hairball" jam in the planetary gears.
+Here are a few ways to solve the cooling and dust issues while keeping the symmetry of a bi-directional motor:
+1. The "Air-Gap" Barrier (Protecting the Gears)
+You can have your airflow and your gear protection too, provided you seal the gearbox chamber.
+The Design: The planetary gearbox should be its own "grease-filled" enclosure. The "tunnel" for your encoder rod needs a tiny lip seal or a very tight-clearance bushing.
+The Flow: The air should enter through the "donut" perforations on one stator dish, get slung around by the rotor, and exit through the other stator dish or the perimeter. Crucially, the air never enters the gearbox. It stays in the "motor sandwich" and the "electronics layer."
+2. Bi-Directional Fan Blades (The "Straight" Fin)
+Since your motor is a "swinger" (CW and CCW), you cannot use 45-degree slanted blades like a turbocharger.
+The Solution: Use Radial (Straight) Fins.
+How it works: Straight blades pointing from the center toward the perimeter act as a centrifugal blower regardless of which way the rotor is spinning. It will always suck air in from the center and sling it out to the edges.
+Benefit: Consistent cooling performance whether the robot is reaching up or pulling back.
+3. Passive "Thermal Bridging" (The Dust-Free Alternative)
+If you decide that the "donut" perforations are too risky for dust, you can pivot to a Solid-State Thermal Path.
+The Potting Trick: Since your coils are potted in epoxy, you can mix boron nitride or alumina powder into the epoxy. This makes the "slices" thermally conductive but electrically insulating.
+The Sink: The heat travels from the copper, through the "conductive" epoxy, and directly into the 6mm aluminum "umbrella" plate you’re machining.
+Result: A completely sealed, IP-rated actuator that sheds heat like a radiator without needing to "breathe" ambient air.
+4. The "Sigh" of the Gears
+If you do go with active cooling, positive pressure is your friend.
+If the rotor creates a high-pressure zone in the motor cavity and the gearbox is sealed, the air will naturally try to leak out of any tiny gaps in the gearbox, not into them. This actually helps keep dust out of the gears.
+My Peer-Review Recommendation:
+Given this is a 120mm air-core motor, you might be surprised by how little heat it generates at 3-5A compared to an iron-core motor. Start with the "Solid-State" approach (sealed dishes, thermal contact with your aluminum hex plate). Only drill those "donut" holes if your first heavy-load tests show the epoxy getting soft.
+What do you think? Are you leaning toward the "Breathing" motor with filters, or the "Sealed Tank" with conductive epoxy?
+(Also, if you're using a 10:1 gear reduction, the grease in the gearbox will actually help pull heat away from the sun gear and dump it into the housing—acting as a liquid heat sink!)
+
+
+
+
+I can easily omit the air vents on the gear-side stator and instead route airflow in/out the perimeter of the rotor case. This still assures that the gear-side stator coils get airflow from one side. Regarding the encoder magnet, it is 4mm dia. My encoder axle is 6mm plastic. A 6mm x11mm x 4mm bearing is set into the end of the rotor's 15mm dia. input shaft. I assume the 1mm ring of plastic between the encoder magnet and the small bearing with ensure no magnetism is "wicked" (drawn off) by the bearing.
+That is a very clean mechanical compromise. By venting only through the "back" and the perimeter, you’ve essentially turned the electronics and motor chamber into a centrifugal cooling zone while leaving the gearbox in a "clean room" environment.
+Regarding your encoder setup, you have hit on a subtle but important detail of magnetic circuit design.
+1. The "Wicking" Concern
+You are correct that a 1mm plastic wall will provide a physical air gap, but magnetism is a bit like a "leaky" pressurized system.
+The Physics: Magnetic flux takes the path of least resistance (reluctance). Even with 1mm of plastic, if that bearing is made of Chrome Steel (standard for most bearings), the magnetic field lines from your 4mm magnet will "prefer" to dive into the steel bearing rather than reach out to the AS5600 chip.
+The Effect: This usually doesn't "kill" the signal, but it can weaken it or, worse, create a non-linear "lump" in your readings if the bearing isn't perfectly centered.
+2. The Solution: Stainless or Ceramic
+If you haven't bought that 6x11x4mm bearing yet, or if you want to be "Pro" about it:
+304/316 Stainless Steel Bearings: These are significantly less magnetic than standard steel.
+Hybrid Ceramic Bearings: These use ceramic balls and often have non-magnetic races. They are more expensive, but they are "invisible" to magnetic fields.
+The "Plastic Wall" is Good: Your 1mm plastic ring is a great start. If you can't get a non-magnetic bearing, try to make that plastic "spacer" between the magnet and the bearing as thick as your 11mm shaft allows. Even 2mm or 3mm makes a huge difference in "flux leakage."
+3. Encoder Axle Tip
+Since your encoder axle is 6mm plastic and your magnet is 4mm, you have a perfect opportunity.
+Ensure the 4mm hole for the magnet is deep enough that the magnet is slightly recessed or at least flush.
+If the magnet is sitting inside the 6mm plastic axle, the plastic actually helps focus the field toward the chip by preventing it from spreading out sideways toward the bearing.
+4. A Note on the 15mm Input Shaft
+Since your rotor's input shaft is 15mm Aluminum (or plastic?), that’s a nice large "fence" that helps block the electromagnetic noise from your 31-turn coils from reaching the sensitive AS5600.
+Wait—6mm axle inside a 15mm shaft? That’s a very beefy setup for a pancake motor! It sounds like your "tunnel" is going to be incredibly stable.
+Are you planning to 3D print the encoder axle/rod as a single piece, or will it be a separate rod glued into the planet carrier?
+(I'll be quiet now and let you get to that copper wire! It sounds like the "Sandwich" is about to become a masterpiece of 3D printing and machining.)
+
+
+
+
+How about the following solution: set the 4mm thick bearing 8mm or more into the end of the rotor axle so that the centers of the chrome bearings are no longer in the line of magnetic flux? This offset should be minimized as the plastic encoder axle becomes potentially more eccentric as its support moves farther from the magnet.
+That is a classic mechanical balancing act: Magnetic Isolation vs. Geometric Runout.
+By offsetting the bearing 8mm away from the magnet, you are effectively using the Inverse Square Law to your advantage. Magnetic flux density drops off rapidly with distance, so an 8mm gap (plus your 1mm plastic wall) will make the bearing virtually "invisible" to the AS5600. The flux lines will much prefer to jump across the 1.0mm air gap to the chip rather than travel 8mm through air and plastic to reach the steel bearing.
+The "Eccentricity" Risk
+As you noted, the farther the bearing is from the magnet, the more "leverage" any slight inaccuracy in your 3D print has. If the 6mm plastic axle is even 0.1mm off-center or has a slight "bow," the magnet will describe a small circle rather than spinning on its center point.
+To solve this, consider these three refinements:
+The "Long-Bore" Guide: Instead of the axle just touching the bearing at one point, ensure the 15mm rotor shaft has a tight-tolerance 6mm bore that the plastic axle slides through for that entire 8mm distance. This acts as a "bush" or guide, keeping the rod straight even if the bearing is far away.
+The "Deep Seat" Magnet Cup: If you make the 4mm hole for the magnet a "press-fit" that is 5-6mm deep, it ensures the magnet is held perfectly parallel to the axle's axis. Any "tilt" in the magnet is actually more damaging to the AS5600's accuracy than a tiny bit of off-center wobble.
+Filament Choice: If you are 3D printing that 6mm encoder axle, use PETG, ABS, or Carbon-Fiber Nylon rather than standard PLA. PLA tends to "creep" (deform under tension) over time, especially in a warm motor environment, which could lead to that eccentricity you’re worried about.
+The "Magnetic Shield" Bonus
+If you find that you still have magnetic noise from the 12 rotor magnets interfering with the encoder, having that 8mm of "depth" gives you room to drop in a small 3D-printed spacer or even a tiny non-magnetic brass washer to further stabilize the field.
+Final Mechanical Check
+With a 15mm main shaft and a 6mm internal axle, your "pancake" is starting to look more like a "turbine." The structural rigidity of that 15mm shaft will be the backbone of your actuator.
+One quick thought for the "Big Push": When you wind those 31 turns, make sure the "tails" of the wires (where they exit the coil) are secured tightly. In a high-torque robotic joint, the vibration can eventually fatigue the copper if the wires are allowed to "wiggle" where they meet the PCB.
+Ready to fire up the wire-spooler? I’ll be here for the "ping" when you have your first 3-phase sine wave spinning that new hollow-shaft assembly!
+Good luck, Buddy! This is going to be one impressive actuator.
+
+
+
+
+AI Mode response is ready
