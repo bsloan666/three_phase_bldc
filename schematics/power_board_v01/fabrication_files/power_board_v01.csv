@@ -1,0 +1,8 @@
+"Id";"Designator";"Footprint";"Quantity";"Designation";"Supplier and ref";
+1;"J8";"SolderWire-1.5sqmm_1x02_P6mm_D1.7mm_OD3mm";1;"Thru Holes";;;
+2;"J2";"Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical";1;"1x3 Connector";;;
+3;"R3,R2,R1";"R_0603_1608Metric";3;"4.7kOhm";;;
+4;"J1";"Molex_KK-254_AE-6410-06A_1x06_P2.54mm_Vertical";1;"1x6 Connector";;;
+5;"C7,C6,C5,C4,C3,C2,C1";"C_1210_3225Metric";7;"100uF";;;
+6;"J7,J6";"AMASS_XT30PW-F_1x02_P2.50mm_Horizontal";2;"XT30";;;
+7;"Q3,Q1,Q2";"TO-263-7_TabPin8";3;"BTS7960B";;;

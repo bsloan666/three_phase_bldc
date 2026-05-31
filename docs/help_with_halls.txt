@@ -1,0 +1,114 @@
+// The code fragment below sends signals to 4 pins depending on two state values:
+// 1) a 3-bit code representing the position of a rotor
+// 2) a signed integer between -255 and 255 represented by the variable called direction 
+// the variable "velocity" is really "speed" which is just abs(direction)
+
+// A sequence of 3-bit values from the sensors that represent clockwise rotation are
+//    4, 6, 2, 3, 1, 5
+
+// The values 0 and 7 _should_ never arise bet the case should be handled as a null case.
+
+// I would like to re-write this fragment so that there are no conditional clauses but rather
+// look-ups into arrays.
+
+  if(direction > 0) {
+    if (ss == 2) { // A High, B Low, C Off
+      digitalWrite(enA, HIGH); analogWrite(pwmA, velocity);
+      digitalWrite(enB, HIGH); analogWrite(pwmB, 0);
+    } else if (ss == 3) { // A High, C Low, B Off
+      digitalWrite(enA, HIGH); analogWrite(pwmA, velocity);
+      digitalWrite(enC, HIGH); analogWrite(pwmC, 0);
+    } else if (ss == 1) { 
+      digitalWrite(enB, HIGH); analogWrite(pwmB, velocity);
+      digitalWrite(enC, HIGH); analogWrite(pwmC, 0);
+    } else if (ss == 5) { 
+      digitalWrite(enA, HIGH); analogWrite(pwmA, 0);
+      digitalWrite(enB, HIGH); analogWrite(pwmB, velocity);
+    } else if (ss == 4) { 
+      digitalWrite(enA, HIGH); analogWrite(pwmA, 0);
+      digitalWrite(enC, HIGH); analogWrite(pwmC, velocity);
+    } else if (ss == 6) {
+      digitalWrite(enB, HIGH); analogWrite(pwmB, 0);
+      digitalWrite(enC, HIGH); analogWrite(pwmC, velocity);
+    }
+  } else if (direction < 0) {
+    if (ss == 5) { // A High, B Low, C Off
+      digitalWrite(enA, HIGH); analogWrite(pwmA, velocity);
+      digitalWrite(enB, HIGH); analogWrite(pwmB, 0);
+    } else if (ss == 4) { // A High, C Low, B Off
+      digitalWrite(enA, HIGH); analogWrite(pwmA, velocity);
+      digitalWrite(enC, HIGH); analogWrite(pwmC, 0);
+    } else if (ss == 6) { 
+      digitalWrite(enB, HIGH); analogWrite(pwmB, velocity);
+      digitalWrite(enC, HIGH); analogWrite(pwmC, 0);
+    } else if (ss == 2) { 
+      digitalWrite(enA, HIGH); analogWrite(pwmA, 0);
+      digitalWrite(enB, HIGH); analogWrite(pwmB, velocity);
+    } else if (ss == 3) { 
+      digitalWrite(enA, HIGH); analogWrite(pwmA, 0);
+      digitalWrite(enC, HIGH); analogWrite(pwmC, velocity);
+    } else if (ss == 1) {
+      digitalWrite(enB, HIGH); analogWrite(pwmB, 0);
+      digitalWrite(enC, HIGH); analogWrite(pwmC, velocity);
+    }
+  }
+
+
+// response below:
+
+// 1. Map direction to array index: 0 for Counter-Clockwise (negative), 1 for Clockwise (positive)
+// If direction is 0, velocity is 0, so the state mapping choice does not matter.
+int dirIdx = (direction > 0) ? 1 : 0; 
+
+// 2. Define the static lookup tables
+// Dimensions: [Direction: 0=CCW, 1=CW][Sensor State: 0 to 7]
+
+// Master Enable Pin State array: Bitmask format (Bit 0 = enA, Bit 1 = enB, Bit 2 = enC)
+// 0 = LOW, 1 = HIGH
+const uint8_t EN_MASK[2][8] = {
+    // CCW (direction < 0)
+    {0, 6, 3, 5, 5, 3, 6, 0}, 
+    // CW  (direction > 0)
+    {0, 6, 3, 5, 5, 3, 6, 0}  
+};
+
+// PWM Scaling Multiplier array: Multiplies velocity (0 = Off, 1 = On)
+// Indices: [0]=pwmA, [1]=pwmB, [2]=pwmC
+const uint8_t PWM_SCALE[2][8][3] = {
+    // CCW State Lookups (ss 0 to 7)
+    {
+        {0, 0, 0}, // ss = 0 (Null)
+        {0, 0, 1}, // ss = 1 (B Off, C Val) -> [enB, enC]
+        {0, 1, 0}, // ss = 2 (A Off, B Val) -> [enA, enB]
+        {0, 0, 1}, // ss = 3 (A Off, C Val) -> [enA, enC]
+        {1, 0, 0}, // ss = 4 (A Val, C Off) -> [enA, enC]
+        {1, 0, 0}, // ss = 5 (A Val, B Off) -> [enA, enB]
+        {0, 1, 0}, // ss = 6 (B Val, C Off) -> [enB, enC]
+        {0, 0, 0}  // ss = 7 (Null)
+    },
+    // CW State Lookups (ss 0 to 7)
+    {
+        {0, 0, 0}, // ss = 0 (Null)
+        {0, 1, 0}, // ss = 1 (B Val, C Off) -> [enB, enC]
+        {1, 0, 0}, // ss = 2 (A Val, B Off) -> [enA, enB]
+        {1, 0, 0}, // ss = 3 (A Val, C Off) -> [enA, enC]
+        {0, 0, 1}, // ss = 4 (A Off, C Val) -> [enA, enC]
+        {0, 1, 0}, // ss = 5 (A Off, B Val) -> [enA, enB]
+        {0, 0, 1}, // ss = 6 (B Off, C Val) -> [enB, enC]
+        {0, 0, 0}  // ss = 7 (Null)
+    }
+};
+
+// 3. Perform Branchless Execution 
+uint8_t currentEnMask = EN_MASK[dirIdx][ss];
+
+// Write Enable Pins using bitwise extraction
+digitalWrite(enA, (currentEnMask & 0x01) ? HIGH : LOW);
+digitalWrite(enB, (currentEnMask & 0x02) ? HIGH : LOW);
+digitalWrite(enC, (currentEnMask & 0x04) ? HIGH : LOW);
+
+// Write PWM Speeds safely scaling velocity
+analogWrite(pwmA, PWM_SCALE[dirIdx][ss][0] * velocity);
+analogWrite(pwmB, PWM_SCALE[dirIdx][ss][1] * velocity);
+analogWrite(pwmC, PWM_SCALE[dirIdx][ss][2] * velocity);
+

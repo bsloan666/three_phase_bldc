@@ -18,11 +18,11 @@ In 3-phase drive, current only flows when one phase is at 12V and another is at 
 3. The 6-Step "Minimal" Arduino Code
 Here are the 6 values to send to your 3 RPWM pins for your Hall states. Note that in 6-step, the "High-Z" state is handled by the Enable pins.
 Hall State (ABC)	Bridge A (RPWM / EN)	Bridge B (RPWM / EN)	Bridge C (RPWM / EN)
-101 (5)	255 / HIGH	0 / HIGH	X / LOW
-001 (1)	255 / HIGH	X / LOW	0 / HIGH
-011 (3)	X / LOW	255 / HIGH	0 / HIGH
-010 (2)	0 / HIGH	255 / HIGH	X / LOW
-110 (6)	0 / HIGH	X / LOW	255 / HIGH
+101 (5)	            255 / HIGH	            0 / HIGH X /        LOW
+001 (1)	            255 / HIGH	X / LOW	0 / HIGH
+011 (3)	            X / LOW	255 / HIGH	0 / HIGH
+010 (2)	            0 / HIGH	255 / HIGH	X / LOW
+110 (6)	            0 / HIGH	X / LOW	255 / HIGH
 100 (4)	X / LOW	0 / HIGH	255 / HIGH
 (X = "Don't care" because the EN pin is LOW, putting that bridge in High-Z). 
 GitHub
@@ -262,3 +262,14 @@ Since you are winding those trapezoidal wedges today:
 When you finish a coil, leave about 100mm of "tail" on each end. When you design the PCB in KiCad, you can place large through-hole pads at the perimeter of each H-bridge "cell." This allows you to thread your 26AWG stator wires directly into the PCB for a rock-solid, vibration-proof connection.
 Are you planning to make the PCB 2-layer or 4-layer? (For a motor of this power, a 4-layer board with internal Ground/Power planes is the "Gold Standard" for stability, but 2-layer with beefy traces is cheaper and totally doable.)
 Enjoy the winding marathon! I'm ready to help with the KiCad schematic symbols for the BTN8982 whenever you're ready.
+
+Hall State (ABC)	Bridge A (RPWM / EN)	Bridge B (RPWM / EN)	Bridge C (RPWM / EN)
+101 (5)	255 / HIGH	0 / HIGH	X / LOW
+001 (1)	255 / HIGH	X / LOW	0 / HIGH
+011 (3)	X / LOW	255 / HIGH	0 / HIGH
+010 (2)	0 / HIGH	255 / HIGH	X / LOW
+110 (6)	0 / HIGH	X / LOW	255 / HIGH
+100 (4)	X / LOW	0 / HIGH	255 / HIGH
+
+
+
