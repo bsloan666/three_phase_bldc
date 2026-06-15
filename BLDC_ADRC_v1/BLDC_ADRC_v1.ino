@@ -8,11 +8,22 @@ const int PIN_MOTOR_A = 5;
 const int PIN_MOTOR_B = 6;
 
 // --- LADRC Parameters (Tuning) ---
-float wc = 6.0;       // Lowered for high-inertia arm
-float wo = 30.0;      // Lowered to ignore high-frequency vibration/noise
-float b0 = 100.0;     
-const float dt = 0.01; 
-const float deadband = 10.0; // Ignore errors smaller than ~0.7 degrees
+float wc = 10.0;       // Increased for smoother, more fluid motion
+float wo = 50.0;       // Increased to match the faster controller
+float b0 = 20000.0;    
+const float dt = 0.002; 
+const float deadband = 0.5; 
+const int MIN_PWM = 110;    
+const int KICK_PWM = 254;   // Near-max power (99.6% duty cycle) for driver stability
+const int KICK_DURATION_MS = 400; // Longer sustained push
+
+// --- State Tracking for Kicker & Fault Reset ---
+unsigned long last_move_time = 0;
+float last_y_kicker = 0;
+bool is_kicking = false;
+unsigned long kick_start_time = 0;
+bool is_resetting_driver = false;
+unsigned long reset_start_time = 0;
 
 // --- Precalculated Gains ---
 float beta1, beta2, beta3;
@@ -51,14 +62,60 @@ long get_unwrapped_pos() {
   return unwrapped_pos;
 }
 
-void apply_motor_pwm(float control_u) {
-  int power = constrain(abs(control_u), 0, 192); 
-  if (control_u > 0) {
-    digitalWrite(PIN_MOTOR_B, LOW);
-  } else {
-    digitalWrite(PIN_MOTOR_B, HIGH);
+float apply_motor_pwm(float control_u, float current_y) {
+  static int last_dir = 0; 
+  int current_dir = (control_u >= 0) ? 1 : -1;
+  unsigned long now = millis();
+
+  // 1. Stall Detection: If we want to move but haven't moved in 150ms
+  if (abs(control_u * b0) > 5.0 && !is_kicking) {
+    if (abs(current_y - last_y_kicker) > 1.0) {
+      last_y_kicker = current_y;
+      last_move_time = now;
+    } else if (now - last_move_time > 150) {
+      is_kicking = true;
+      kick_start_time = now;
+    }
   }
+
+  int power = constrain(abs(control_u * b0), 0, 255);
+
+  // 2. Handle Ramped Kicker
+  if (is_kicking) {
+    unsigned long elapsed = now - kick_start_time;
+    const unsigned long ramp_ms = 150; // 150ms ramp for the 255 peak power
+    
+    if (elapsed < ramp_ms) {
+      // Smoothly ramp from MIN_PWM to KICK_PWM
+      power = map(elapsed, 0, ramp_ms, MIN_PWM, KICK_PWM);
+    } else if (elapsed < KICK_DURATION_MS) {
+      power = KICK_PWM;
+    } else {
+      is_kicking = false;
+      last_move_time = now;
+    }
+  } 
+  // 3. Normal Minimum PWM
+  else if (power > 0 && power < MIN_PWM) {
+    power = MIN_PWM;
+  }
+
+  // 4. Solid Direction Signal
+  if (current_dir != last_dir) {
+    pinMode(PIN_MOTOR_B, OUTPUT);
+    if (current_dir == 1) {
+      digitalWrite(PIN_MOTOR_B, LOW);
+    } else {
+      digitalWrite(PIN_MOTOR_B, HIGH);
+    }
+    last_dir = current_dir;
+  }
+  
   analogWrite(PIN_MOTOR_A, power);
+
+  float actual_u = (float)power / b0;
+  if (control_u < 0) actual_u = -actual_u;
+  return actual_u;
 }
 
 void handle_serial() {
@@ -123,8 +180,8 @@ void setup() {
 void loop() {
   unsigned long current_micros = micros();
 
-  // Fixed Frequency Control Loop (100Hz)
-  if (current_micros - prev_micros >= 10000) {
+  // Fixed Frequency Control Loop (500Hz)
+  if (current_micros - prev_micros >= 2000) {
     prev_micros = current_micros;
 
     // 1. Read actual position (Unwrapped)
@@ -150,10 +207,13 @@ void loop() {
     z2 += (z3 + beta2 * error_o + b0 * u) * dt;
     z3 += (beta3 * error_o) * dt;
 
+    // Anti-windup for z3 (limit the total disturbance estimate)
+    z3 = constrain(z3, -1000.0, 1000.0); 
+
     // 4. Control Law
     float error_p = current_setpoint - z1;
     
-    // Apply Deadband: If error is tiny, stop driving u0 aggressively
+    // Apply Deadband
     if (abs(error_p) < deadband) {
       error_p = 0;
     }
@@ -161,16 +221,16 @@ void loop() {
     float u0 = (kp * error_p) - (kd * z2);
     
     // 5. Disturbance Rejection
-    // Note: z3 still estimates the static load (gravity) even in deadband
     u = (u0 - z3) / b0;
     
-    // 6. Apply Output
-    apply_motor_pwm(u);
+    // 6. Apply Output and Get Actual Applied U
+    u = apply_motor_pwm(u, y);
 
     // 7. Telemetry
     static int count = 0;
     if (count++ % 10 == 0) {
        Serial.print("T:"); Serial.print(target_pos);
+
        Serial.print(" S:"); Serial.print(current_setpoint);
        Serial.print(" P:"); Serial.print(y);
        Serial.print(" U:"); Serial.println(u);
