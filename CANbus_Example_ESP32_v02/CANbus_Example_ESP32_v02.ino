@@ -2,8 +2,8 @@
 #include <ESP32-TWAI-CAN.hpp>
 
 // GPIO definitions for the CAN transceiver
-#define CAN_TX_PIN 17
-#define CAN_RX_PIN 16
+#define CAN_TX_PIN 4
+#define CAN_RX_PIN 5
 
 uint32_t myNodeID = 0;
 
@@ -41,14 +41,43 @@ void setup() {
         Serial.println("Failed to install TWAI driver.");
     }
 }
+void loop() {
+    // 1. Create a native ESP-IDF message structure
+    twai_message_t rx_msg;
 
+    // 2. Read the message from the queue with a 0-tick timeout (non-blocking)
+    // twai_receive automatically clears the current message from the buffer on success
+    if (twai_receive(&rx_msg, 0) == ESP_OK) {
+        
+        // 3. Only print if it's a standard data frame (ignores error/flicker frames)
+        if (!(rx_msg.rtr)) { 
+            Serial.print("ID: 0x");
+            Serial.print(rx_msg.identifier, HEX);
+            Serial.print(" | Len: ");
+            Serial.print(rx_msg.data_length_code);
+            Serial.print(" | Data: ");
+
+            // Print the data payload in clean Hexadecimal format
+            for (int i = 0; i < rx_msg.data_length_code; i++) {
+                if (rx_msg.data[i] < 0x10) Serial.print("0"); // Padding
+                Serial.print(rx_msg.data[i], HEX);
+                Serial.print(" ");
+            }
+            Serial.println();
+        }
+    }
+
+    // Small delay to prevent the CPU from spinning at 100% load
+    delay(1); 
+}
+/*
 void loop() {
     // Create a temporary frame to hold incoming data
     CanFrame rxFrame;
 
     // Check if a message is waiting in the hardware RX queue
     // zero timeout means it checks instantly and moves on without blocking the loop
-    if (ESP32Can.readFrame(rxFrame, 0) == ESP_OK) {
+    if (ESP32Can.readFrame(rxFrame, 0) == ESP_OK && rxFrame.data_length_code >0) {
         
         // Print message details to the Arduino Serial Monitor
         Serial.print("Received Frame! ID: ");
@@ -70,3 +99,4 @@ void loop() {
     // Small delay to keep the background tasks happy
     delay(1); 
 }
+*/
